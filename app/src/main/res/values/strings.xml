@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Okul Duyuru Sistemi</string>
+    <string name="btn_giris">Giriş</string>
+    <string name="btn_kayitOl">Kayıt Ol</string>
+    <string name="ogrenciNo">Öğrenci No:</string>
+    <string name="password">Şifre:</string>
+    <string name="confirmPassword">Şifrenizi Onaylayın:</string>
+    <string name="kayitliDegil">Kayıtlı değil misin?</string>
+    <string name="kayitli">Zaten bir hesabın var mı?</string>
+    <string name="girisYap">Giriş Yap</string>
+    <string name="kayitliDegil2">KAYIT OL</string>
+    <string name="adSoyad">Ad Ve Soyad:</string>
+    <string name="soyad">Soyad:</string>
+    <string name="eMail">E-Posta:</string>
+    <string name="bolum">Bölümünüzü Seçiniz:</string>
+    <string-array name="bolumler">
+        <item>Bölüm Seçiniz:</item>
+        <item>Bilgisayar Programcılığı</item>
+        <item>Bilgisayar Programcılığı(İÖ)</item>
+        <item>Anestezi</item>
+        <item>Yazılım Mühendisliği</item>
+    </string-array>
+</resources>

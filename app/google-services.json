@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "512829307506",
+    "firebase_url": "https://okul-duyuru.firebaseio.com",
+    "project_id": "okul-duyuru",
+    "storage_bucket": "okul-duyuru.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:512829307506:android:18fc3f3e72b1de75f7e0eb",
+        "android_client_info": {
+          "package_name": "com.paket.okulduyuru"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "512829307506-qkn7jb5no6m8n65mqa2espskb633p059.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paket.okulduyuru",
+            "certificate_hash": "ca98ff7cdc468fda703d883a50b415bea858d24c"
+          }
+        },
+        {
+          "client_id": "512829307506-ds0ffhcavh7qqevlr2kt0il2svrn0em9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCuY5i-LPKxYzn5GPsqYCJXBOByhIJc2pQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "512829307506-ds0ffhcavh7qqevlr2kt0il2svrn0em9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
