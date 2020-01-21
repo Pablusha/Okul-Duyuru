@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.paket.okulduyuru.utils.PreferenceUtils;
+
 
 public class LoginActivity extends AppCompatActivity {
     DatabaseHelper db;
@@ -30,6 +32,13 @@ public class LoginActivity extends AppCompatActivity {
         eSifre = findViewById(R.id.edittext_password);
         btnGiris = findViewById(R.id.btnGiris);
 
+        if (PreferenceUtils.getOgrenciNo(this) != null || !PreferenceUtils.getOgrenciNo(this).equals("")) {
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+        } else {
+
+        }
+
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,8 +49,10 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Bilgiler boş bırakılamaz.",Toast.LENGTH_LONG).show();
                 }
                 else if (null != db.loginKontrol(ogrenci_no,sifre) ) {
+                    PreferenceUtils.saveOgrenciNo(ogrenci_no,getApplicationContext());
+                    PreferenceUtils.saveSifre(sifre,getApplicationContext());
                     String ogrenciDb = db.loginKontrol(ogrenci_no,sifre);
-                    Intent i = new Intent(getApplicationContext(),TelefonDogrulama.class);
+                    Intent i = new Intent(getApplicationContext(),HomeActivity.class);
                     startActivity(i);
                 }
                 else {
