@@ -20,4 +20,9 @@
         <item>Anestezi</item>
         <item>Yazılım Mühendisliği</item>
     </string-array>
+    <string name="hosgeldin">Hoşgeldin!</string>
+    <string name="duyurular">Duyurular</string>
+    <string name="mesajlasma">Mesajlaşma</string>
+    <string name="arelweb">Arel Web</string>
+    <string name="etkinlikler">Etkinlikler</string>
 </resources>

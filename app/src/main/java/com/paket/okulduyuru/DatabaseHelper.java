@@ -40,6 +40,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
     public String loginKontrol(String ogrenci_no,String sifre) {
         SQLiteDatabase db = getReadableDatabase();
         Cursor cursor = db.rawQuery("select ogrenci_no,sifre from ogrenci where ogrenci_no=? and sifre=?",new String[]{ogrenci_no,sifre});
@@ -74,7 +75,5 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery("select * from ogrenci",null);
         return cursor;
     }
-
-
 
 }
