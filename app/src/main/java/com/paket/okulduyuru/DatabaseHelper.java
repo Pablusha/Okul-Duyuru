@@ -18,12 +18,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String sql = "create table ogrenci(ogrenci_no text primary key,ad_soyad text,email text,sifre text,bolumler text)";
         db.execSQL(sql);
     }
+
     @Override
     public void onUpgrade(SQLiteDatabase db,int eski,int yeni) {
         String sql = "drop table if exists ogrenci";
         db.execSQL(sql);
         onCreate(db);
     }
+
     //Tabloya öğrenci ekleme
     public boolean ogrenciEkle(String s1,String s2,String s3,String s4,String i1) {
         SQLiteDatabase db = this.getWritableDatabase();
