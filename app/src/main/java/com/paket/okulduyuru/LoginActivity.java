@@ -32,16 +32,11 @@ public class LoginActivity extends AppCompatActivity {
         eSifre = findViewById(R.id.edittext_password);
         btnGiris = findViewById(R.id.btnGiris);
 
-        if (PreferenceUtils.getOgrenciNo(this) != null || !PreferenceUtils.getOgrenciNo(this).equals("")) {
-            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-            startActivity(intent);
-        } else {
+        btnGiris.setOnClickListener(new View.OnClickListener(
 
-        }
-
-        btnGiris.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ) {
+                @Override
+                public void onClick(View v) {
                 String ogrenci_no = eOgrenciNo.getText().toString();
                 String sifre = eSifre.getText().toString();
                 db.verilereUlas();
@@ -62,11 +57,21 @@ public class LoginActivity extends AppCompatActivity {
                     eOgrenciNo.requestFocus();
                 }
 
+
+
             }
         });
 
-    }
+        if (PreferenceUtils.getOgrenciNo(LoginActivity.this) != null || !PreferenceUtils.getOgrenciNo(LoginActivity.this).equals("")) {
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+        } else {
 
+        }
+
+
+
+    }
 
     public void kayitOl(View view) { //Kayıt ol sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
