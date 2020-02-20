@@ -8,14 +8,6 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@drawable/loginbackground">
-    <!-- Gravity:Nesneyi bulunduğu layout’a göre ortalar -->
-    <!-- match_parent:Yatay olarak nesne ekranı kaplar. -->
-    <!-- wrap_content:Yatay olarak nesne içinde yer alan text veya img kadar yer kaplar. -->
-    <!--
-    LinearLayout’da ögeler sırasıyla ekrana dizilir ve dizilime en yukarıdan aşağıya doğru gerçekleşir.
-    Android xml ekranında ki nesneleri tek bir yönde yatay veya dikey olarak konumlandırmamıza olanak sağlar.
-    Android:orientation özelliğini kullanarak yatay (horizontal) veya dikey(vertical) olarak konumlandırabiliriz.
-    -->
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="wrap_content"
@@ -26,16 +18,16 @@
         app:civ_border_width="2dp" />
 
     <EditText
-        android:id="@+id/edittext_ogrenciNo"
+        android:id="@+id/edittext_ogretmenId"
         android:layout_width="190dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="15dp"
         android:paddingLeft="2dp"
         android:background="#ffffff"
         android:maxLength="9"
         android:inputType="number"
         android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:hint="@string/ogrenciNo"/>
+        android:hint="@string/ogretmenId"/>
 
     <EditText
         android:id="@+id/edittext_password"
@@ -46,7 +38,7 @@
         android:background="#ffffff"
         android:drawableLeft="@drawable/ic_lock"
         android:layout_marginTop="10dp"
-        android:hint="@string/password"/> <!-- Promp Text -->
+        android:hint="@string/password"/>
 
     <Button
         android:id="@+id/btnGiris"
@@ -66,25 +58,17 @@
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:textColor="#ffffff"
-            android:text="@string/kayitliDegil"/>
+            android:text="@string/kayitliDegil3"/>
 
         <TextView
             android:id="@+id/txtRegister"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:paddingLeft="2dp"
+            android:paddingLeft="3dp"
             android:textStyle="bold"
             android:textColor="#FCFCFC"
             android:text="@string/kayitliDegil2"
             android:onClick="kayitOl"/>
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btnOgretmenGiris"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="1dp"
-        android:background="#31B0D6"
-        android:text="@string/ogretmenGiris"/>
 
 </LinearLayout>

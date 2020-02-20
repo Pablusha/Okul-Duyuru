@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseHelper db;
     EditText eOgrenciNo;
     EditText eSifre;
-    Button btnGiris;
+    Button btnGiris,btnOgretmenGiris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,17 +31,13 @@ public class LoginActivity extends AppCompatActivity {
         eOgrenciNo = findViewById(R.id.edittext_ogrenciNo);
         eSifre = findViewById(R.id.edittext_password);
         btnGiris = findViewById(R.id.btnGiris);
+        btnOgretmenGiris = findViewById(R.id.btnOgretmenGiris);
 
-        if (PreferenceUtils.getOgrenciNo(this) != null || !PreferenceUtils.getOgrenciNo(this).equals("")) {
-            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-            startActivity(intent);
-        } else {
+        btnGiris.setOnClickListener(new View.OnClickListener(
 
-        }
-
-        btnGiris.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ) {
+                @Override
+                public void onClick(View v) {
                 String ogrenci_no = eOgrenciNo.getText().toString();
                 String sifre = eSifre.getText().toString();
                 db.verilereUlas();
@@ -62,11 +58,29 @@ public class LoginActivity extends AppCompatActivity {
                     eOgrenciNo.requestFocus();
                 }
 
+
+
             }
         });
 
-    }
+        btnOgretmenGiris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,activity_ogretmen_login.class);
+                startActivity(intent);
+            }
+        });
 
+        if (PreferenceUtils.getOgrenciNo(LoginActivity.this) != null || !PreferenceUtils.getOgrenciNo(LoginActivity.this).equals("")) {
+            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
+            startActivity(intent);
+        } else {
+
+        }
+
+
+
+    }
 
     public void kayitOl(View view) { //Kayıt ol sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);

@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="#3A2850"
     tools:context=".HomeActivity">
@@ -45,6 +45,7 @@
         android:layout_marginTop="230dp"
         android:background="@drawable/roundrect"
         android:textAlignment="center"
+        android:id="@+id/txtDuyurular"
         android:textColor="#ffffff" />
 
     <TextView
@@ -101,8 +102,12 @@
         android:background="@drawable/roundrect"
         android:textAlignment="center"
         android:textColor="#ffffff"
+<<<<<<< HEAD
         android:id="@+id/txtArelWeb" />
 
+=======
+        android:id="@+id/txtArelWeb"/>
+>>>>>>> 37306d8928ea673591e0c7788e6701cb0a8158a1
 
     <TextView
         android:layout_width="match_parent"
