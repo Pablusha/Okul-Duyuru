@@ -7,19 +7,21 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
     DatabaseHelper db;
-    TextView txtAdSoyad,txtDuyurular,txtArelWeb;
+    TextView txtAdSoyad,txtArelWeb;
+    RelativeLayout txtDuyurular;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
         txtAdSoyad = findViewById(R.id.adSoyad);
-        txtDuyurular = findViewById(R.id.txtDuyurular);
+        txtDuyurular = findViewById(R.id.ac_home_cv_duyurular);
         txtArelWeb = findViewById(R.id.txtArelWeb);
 
         db = new DatabaseHelper(this);
