@@ -36,6 +36,7 @@
         android:inputType="number"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:hint="@string/ogrenciNo"/>
+
     <EditText
         android:id="@+id/edittext_password"
         android:layout_width="190dp"
@@ -46,6 +47,7 @@
         android:drawableLeft="@drawable/ic_lock"
         android:layout_marginTop="10dp"
         android:hint="@string/password"/> <!-- Promp Text -->
+
     <Button
         android:id="@+id/btnGiris"
         android:layout_width="190dp"
@@ -76,5 +78,13 @@
             android:text="@string/kayitliDegil2"
             android:onClick="kayitOl"/>
     </LinearLayout>
+
+    <Button
+        android:id="@+id/btnOgretmenGiris"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="1dp"
+        android:background="#31B0D6"
+        android:text="@string/ogretmenGiris"/>
 
 </LinearLayout>

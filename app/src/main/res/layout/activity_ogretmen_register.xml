@@ -1,9 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/registerbackground"
     tools:context=".activity_ogretmen_register">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="wrap_content"
+        android:layout_height="127dp"
+        android:src="@drawable/arel"
+        android:layout_marginTop="120dp"
+        app:civ_border_color="#111111"
+        app:civ_border_width="2dp" />
+
+    <EditText
+        android:id="@+id/edittext_ogretmenId"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:maxLength="9"
+        android:inputType="number"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:hint="@string/ogretmenId"/>
+
+    <EditText
+        android:id="@+id/edittext_adsoyad"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/ic_person_black_24dp"
+        android:hint="@string/adSoyad" />
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+        android:hint="@string/eMail"/>
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:inputType="textPassword"
+        android:hint="@string/password"/>
+
+    <EditText
+        android:id="@+id/edittext_confirmpassword"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:inputType="textPassword"
+        android:background="#ffffff"
+        android:drawableLeft="@drawable/ic_lock_black_24dp"
+        android:hint="@string/confirmPassword"/>
+
+    <Spinner
+        android:id="@+id/spinnerBolum"
+        android:layout_width="250dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="2dp"
+        android:background="#D3FFFFFF"
+        android:hint="@string/bolum"/>
+
+    <Button
+        android:id="@+id/btnKayit"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:background="#B1A9A9"
+        android:text="@string/btn_kayitOl"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:textColor="#ffffff"
+            android:text="@string/kayitli2"/>
+
+        <TextView
+            android:id="@+id/txtRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:paddingLeft="3dp"
+            android:textStyle="bold"
+            android:textColor="#FCFCFC"
+            android:text="@string/girisYap"
+            android:onClick="girisYap"/>
+    </LinearLayout>
+
+</LinearLayout>

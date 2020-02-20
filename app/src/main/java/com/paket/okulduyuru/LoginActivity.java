@@ -19,7 +19,7 @@ public class LoginActivity extends AppCompatActivity {
     DatabaseHelper db;
     EditText eOgrenciNo;
     EditText eSifre;
-    Button btnGiris;
+    Button btnGiris,btnOgretmenGiris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         eOgrenciNo = findViewById(R.id.edittext_ogrenciNo);
         eSifre = findViewById(R.id.edittext_password);
         btnGiris = findViewById(R.id.btnGiris);
+        btnOgretmenGiris = findViewById(R.id.btnOgretmenGiris);
 
         btnGiris.setOnClickListener(new View.OnClickListener(
 
@@ -59,6 +60,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+            }
+        });
+
+        btnOgretmenGiris.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this,activity_ogretmen_login.class);
+                startActivity(intent);
             }
         });
 

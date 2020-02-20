@@ -25,4 +25,12 @@
     <string name="mesajlasma">Mesajlaşma</string>
     <string name="arelweb">Arel Web</string>
     <string name="etkinlikler">Etkinlikler</string>
+    <string name="ogretmenGiris">Öğretmen Girişi</string>
+    <string name="ogretmenId">Öğretmen ID:</string>
+    <string name="kayitliDegil3">Kayıtlı Değil Misiniz?</string>
+    <string name="kayitli2">Zaten bir hesaba sahip misiniz?</string>
+    <string name="popUp">X</string>
+    <string name="bilgiMesaji">Eğer bir Öğretmen ID\ye sahip değilseniz, kendi ID numaranız hakkında okulumuzun
+        Bilgisayar Programcılığı Bölüm başkanından bilgi alabilirsiniz.</string>
+    <string name="bilgiMesajiKapat">KAPAT</string>
 </resources>
