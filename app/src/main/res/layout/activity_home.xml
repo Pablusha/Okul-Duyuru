@@ -102,12 +102,12 @@
         android:background="@drawable/roundrect"
         android:textAlignment="center"
         android:textColor="#ffffff"
-<<<<<<< HEAD
+
         android:id="@+id/txtArelWeb" />
 
-=======
-        android:id="@+id/txtArelWeb"/>
->>>>>>> 37306d8928ea673591e0c7788e6701cb0a8158a1
+
+
+
 
     <TextView
         android:layout_width="match_parent"

@@ -11,14 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".ArelWebView"></activity>
-=======
+
         <activity android:name=".activity_ogretmen_register"></activity>
         <activity android:name=".activity_ogretmen_login" />
-        <activity android:name=".ArelWebView" />
+
         <activity android:name=".OgrenciDuyuruActivity" />
->>>>>>> 37306d8928ea673591e0c7788e6701cb0a8158a1
         <activity android:name=".HomeActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
