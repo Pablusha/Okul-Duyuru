@@ -80,7 +80,6 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), PreferenceUtils.getOgrenciNo(LoginActivity.this), Toast.LENGTH_LONG).show();
             }
         } catch (Exception e) {
-            Toast.makeText(getApplicationContext(), "e", Toast.LENGTH_LONG).show();
         }
 
 
