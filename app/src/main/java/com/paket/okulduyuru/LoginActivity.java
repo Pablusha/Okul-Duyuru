@@ -71,11 +71,16 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-        if (PreferenceUtils.getOgrenciNo(LoginActivity.this) != null || !PreferenceUtils.getOgrenciNo(LoginActivity.this).equals("")) {
-            Intent intent = new Intent(LoginActivity.this,HomeActivity.class);
-            startActivity(intent);
-        } else {
 
+        try {
+            if (PreferenceUtils.getOgrenciNo(LoginActivity.this) != null || !PreferenceUtils.getOgrenciNo(LoginActivity.this).equals("")) {
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(getApplicationContext(), PreferenceUtils.getOgrenciNo(LoginActivity.this), Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(getApplicationContext(), "e", Toast.LENGTH_LONG).show();
         }
 
 

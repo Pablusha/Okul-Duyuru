@@ -7,84 +7,99 @@
     android:background="#3A2850"
     tools:context=".HomeActivity">
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/ac_home_rl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:text="@string/hosgeldin"
-        android:textSize="25sp"
-        android:layout_marginTop="120dp"
-        android:layout_marginLeft="30dp"
-        android:drawableRight="@drawable/ic_user"
-        android:paddingRight="20dp"
-        android:drawableTint="@color/colorPrimary" />
+        android:paddingStart="30dp"
+        android:paddingEnd="30dp"
+        android:layout_marginTop="120dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="@string/hosgeldin"
+            android:textSize="25sp"
+            android:drawableRight="@drawable/ic_user"
+            android:paddingRight="20dp"
+            android:drawableTint="@color/colorPrimary" />
 
 
-    <TextView
-        android:id="@+id/adSoyad"
+        <TextView
+            android:id="@+id/adSoyad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ffffff"
+            android:text="Anasayfa"
+            android:textSize="15sp"
+            android:layout_marginTop="40dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_home_rl_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
-        android:text="Anasayfa"
-        android:textSize="15sp"
-        android:layout_marginTop="160dp"
-        android:layout_marginLeft="30dp" />
+        android:layout_below="@id/ac_home_rl_title"
+        android:layout_marginTop="20dp"
+        android:padding="30dp"
+        android:paddingTop="50dp"
+        android:rowCount="2"
+        android:columnCount="2">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:elevation="5dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="240dp"
-        android:src="@drawable/duyurular" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/ac_home_cv_duyurular"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/roundrect">
+                <ImageView
+                    android:id="@+id/ac_home_iv_duyurular"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/duyurular"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:id="@+id/ac_home_tv_duyurular"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/ac_home_iv_duyurular"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:text="Duyurular"/>
+            </RelativeLayout>
 
-    <TextView
-        android:layout_width="142dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="230dp"
-        android:background="@drawable/roundrect"
-        android:textAlignment="center"
-        android:id="@+id/txtDuyurular"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="#ffffff"
-        android:text="@string/duyurular"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="20sp" />
-
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:elevation="5dp"
-        android:layout_marginLeft="282dp"
-        android:layout_marginTop="240dp"
-        android:src="@drawable/chat" />
-
-
-    <TextView
-        android:layout_width="142dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="230dp"
-        android:background="@drawable/roundrect"
-        android:textAlignment="center"
-        android:textColor="#ffffff" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
-        android:layout_marginLeft="260dp"
-        android:textColor="#ffffff"
-        android:text="@string/mesajlasma"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="20sp" />
+            <RelativeLayout
+                android:id="@+id/ac_home_cv_message"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/roundrect"
+                android:layout_alignParentEnd="true">
+                <ImageView
+                    android:id="@+id/ac_home_iv_message"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/chat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
+                <TextView
+                    android:id="@+id/ac_home_tv_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/ac_home_iv_message"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="24sp"
+                    android:text="Mesajlaşma"/>
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="70dp"
