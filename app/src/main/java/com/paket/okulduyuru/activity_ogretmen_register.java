@@ -15,7 +15,7 @@ import android.widget.TextView;
 
 public class activity_ogretmen_register extends AppCompatActivity {
 
-    Dialog popUp;
+    private Dialog popUp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
