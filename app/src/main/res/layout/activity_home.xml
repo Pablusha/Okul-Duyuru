@@ -117,7 +117,12 @@
         android:background="@drawable/roundrect"
         android:textAlignment="center"
         android:textColor="#ffffff"
-        android:id="@+id/txtArelWeb"/>
+
+        android:id="@+id/txtArelWeb" />
+
+
+
+
 
     <TextView
         android:layout_width="match_parent"
@@ -138,6 +143,16 @@
         android:src="@drawable/etkinlikler" />
 
     <TextView
+        android:layout_width="142dp"
+        android:layout_height="150dp"
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="470dp"
+        android:background="@drawable/roundrect"
+        android:textAlignment="center"
+        android:textColor="#ffffff" />
+
+    <TextView
+        android:id="@+id/textView"
         android:layout_width="142dp"
         android:layout_height="150dp"
         android:layout_marginLeft="240dp"

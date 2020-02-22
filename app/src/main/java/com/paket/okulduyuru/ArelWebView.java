@@ -21,6 +21,6 @@ public class ArelWebView extends AppCompatActivity {
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.arel.edu.tr/");
+        webView.loadUrl("https://www.arel.edu.tr");
     }
 }
