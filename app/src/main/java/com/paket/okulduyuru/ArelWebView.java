@@ -8,7 +8,7 @@ import android.webkit.WebViewClient;
 
 public class ArelWebView extends AppCompatActivity {
 
-    WebView webView;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

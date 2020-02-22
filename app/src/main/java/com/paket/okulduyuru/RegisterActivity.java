@@ -12,10 +12,11 @@ import android.widget.Toast;
 
 
 public class RegisterActivity extends AppCompatActivity {
-    DatabaseHelper db;
-    EditText eAdSoyad,eOgrenciNo,eSifre,eEMail,eSifreOnay;
-    Spinner spnBolumler;
-    Button btnKayit;
+    private DatabaseHelper db;
+    private EditText eAdSoyad,eOgrenciNo,eSifre,eEMail,eSifreOnay;
+    private Spinner spnBolumler;
+    private Button btnKayit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

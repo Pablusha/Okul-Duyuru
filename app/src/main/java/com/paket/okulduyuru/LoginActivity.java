@@ -16,10 +16,10 @@ import com.paket.okulduyuru.utils.PreferenceUtils;
 
 
 public class LoginActivity extends AppCompatActivity {
-    DatabaseHelper db;
-    EditText eOgrenciNo;
-    EditText eSifre;
-    Button btnGiris,btnOgretmenGiris;
+    private DatabaseHelper db;
+    private EditText eOgrenciNo;
+    private EditText eSifre;
+    private Button btnGiris,btnOgretmenGiris;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

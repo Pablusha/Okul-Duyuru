@@ -20,8 +20,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
-    DatabaseHelper db;
-    TextView txtAdSoyad,txtArelWeb,txtDuyurular;
+    private DatabaseHelper db;
+    private TextView txtAdSoyad,txtArelWeb,txtDuyurular;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
