@@ -11,6 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ArelWebView"></activity>
         <activity android:name=".activity_ogretmen_register"></activity>
+        <activity android:name=".activity_ogretmen_yeni_duyuru"></activity>
         <activity android:name=".activity_ogretmen_login" />
         <activity android:name=".OgrenciDuyuruActivity" />
         <activity android:name=".HomeActivity" />
