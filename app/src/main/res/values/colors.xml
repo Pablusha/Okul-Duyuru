@@ -6,4 +6,6 @@
     <color name="oolorBackground">#413456</color>
     <color name="colorWhite">#ffffff</color>
     <color name="colorToolbar">#EB1D66</color>
+    <color name="colorLogin">#1C3294</color>
+    <color name="colorButton">#967021</color>
 </resources>

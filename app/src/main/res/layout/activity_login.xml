@@ -7,7 +7,7 @@
     tools:context=".LoginActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/loginbackground">
+    android:background="@color/colorLogin">
     <!-- Gravity:Nesneyi bulunduğu layout’a göre ortalar -->
     <!-- match_parent:Yatay olarak nesne ekranı kaplar. -->
     <!-- wrap_content:Yatay olarak nesne içinde yer alan text veya img kadar yer kaplar. -->
@@ -53,7 +53,9 @@
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="#31B0D6"
+        android:background="@color/colorButton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
         android:text="@string/btn_giris"/>
 
     <LinearLayout
@@ -84,7 +86,9 @@
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="1dp"
-        android:background="#31B0D6"
+        android:background="@color/colorButton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
         android:text="@string/ogretmenGiris"/>
 
 </LinearLayout>

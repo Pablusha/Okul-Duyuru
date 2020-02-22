@@ -7,7 +7,7 @@
     tools:context=".LoginActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/loginbackground">
+    android:background="@color/colorLogin">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="wrap_content"
@@ -45,7 +45,9 @@
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="#31B0D6"
+        android:background="@color/colorButton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
         android:text="@string/btn_giris"/>
 
     <LinearLayout

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Okul Duyuru Sistemi</string>
-    <string name="btn_giris">Giriş</string>
+    <string name="btn_giris">GİRİŞ YAP</string>
     <string name="btn_kayitOl">Kayıt Ol</string>
     <string name="ogrenciNo">Öğrenci No:</string>
     <string name="password">Şifre:</string>
@@ -33,4 +33,5 @@
     <string name="bilgiMesaji">Eğer bir Öğretmen ID\ye sahip değilseniz, kendi ID numaranız hakkında okulumuzun
         Bilgisayar Programcılığı Bölüm başkanından bilgi alabilirsiniz.</string>
     <string name="bilgiMesajiKapat">KAPAT</string>
+    <string name="anasayfa">Anasayfa</string>
 </resources>

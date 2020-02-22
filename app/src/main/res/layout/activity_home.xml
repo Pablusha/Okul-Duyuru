@@ -30,7 +30,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="#ffffff"
-            android:text="Anasayfa"
+            android:text="@string/anasayfa"
             android:textSize="15sp"
             android:layout_marginTop="40dp" />
     </RelativeLayout>
@@ -71,7 +71,7 @@
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorWhite"
                     android:textSize="24sp"
-                    android:text="Duyurular"/>
+                    android:text="@string/duyurular"/>
             </RelativeLayout>
 
             <RelativeLayout
@@ -96,7 +96,7 @@
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorWhite"
                     android:textSize="24sp"
-                    android:text="Mesajlaşma"/>
+                    android:text="@string/mesajlasma"/>
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>

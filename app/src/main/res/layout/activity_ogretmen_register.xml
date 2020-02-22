@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@drawable/registerbackground"
+    android:background="@color/colorLogin"
     tools:context=".activity_ogretmen_register">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -85,7 +85,9 @@
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:background="#B1A9A9"
+        android:background="@color/colorButton"
+        android:textSize="15sp"
+        android:textColor="#ffffff"
         android:text="@string/btn_kayitOl"/>
 
     <LinearLayout
