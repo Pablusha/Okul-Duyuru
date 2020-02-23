@@ -1,8 +1,10 @@
 package com.paket.okulduyuru;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -10,59 +12,29 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 
 public class RegisterActivity extends AppCompatActivity {
-    private DatabaseHelper db;
-    private EditText eAdSoyad,eOgrenciNo,eSifre,eEMail,eSifreOnay;
+    private EditText edAdSoyad,edOgrenciNo,edSifre,edEMail,edSifreOnay;
     private Spinner spnBolumler;
     private Button btnKayit;
+    DatabaseReference databaseReference;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseFirestore firebaseFirestore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        db = new DatabaseHelper(this);
-
-        eAdSoyad = findViewById(R.id.edittext_adsoyad);
-        eOgrenciNo = findViewById(R.id.edittext_ogrenciNo);
-        eEMail = findViewById(R.id.edittext_email);
-        eSifre = findViewById(R.id.edittext_password);
-        eSifreOnay = findViewById(R.id.edittext_confirmpassword);
-        spnBolumler = findViewById(R.id.spinnerBolum);
-        btnKayit = findViewById(R.id.btnKayit);
-
-        btnKayit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String adSoyad = eAdSoyad.getText().toString();
-                String ogrenciNo = eOgrenciNo.getText().toString();
-                String email = eEMail.getText().toString();
-                String sifre = eSifre.getText().toString();
-                String sifreOnay = eSifreOnay.getText().toString();
-                String bolumler = spnBolumler.getSelectedItem().toString();
-                if (adSoyad.equals("")||ogrenciNo.equals("")||email.equals("")||sifre.equals("")||sifreOnay.equals("")||bolumler.equals("")) {
-                    Toast.makeText(RegisterActivity.this,"Bilgiler boş bırakılamaz.",Toast.LENGTH_LONG).show();
-                }
-                else {
-                    if (sifre.equals(sifreOnay)) {
-                        Boolean ogrenciKontrol = db.ogrenciKontrol(ogrenciNo);
-                        if (ogrenciKontrol == true) {
-                            Boolean ekle = db.ogrenciEkle(adSoyad,email,sifre,bolumler,ogrenciNo);
-                            if (ekle == true) {
-                                Toast.makeText(RegisterActivity.this,"Kayıt olma işlemi başarılı.",Toast.LENGTH_LONG).show();
-                                startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
-                            }
-                        }
-                        else {
-                            Toast.makeText(RegisterActivity.this,"Öğrenci numarası zaten kayıtlı.",Toast.LENGTH_LONG).show();
-                        }
-                    }
-                }
-                if (!sifre.equals(sifreOnay)) {
-                    Toast.makeText(RegisterActivity.this,"Şifreleriniz eşleşmiyor.",Toast.LENGTH_LONG).show();
-                }
-            }
-        });
 
         Spinner bolumler = (Spinner) findViewById(R.id.spinnerBolum); //Spinner'ımı tanımlıyorum.
 
@@ -73,7 +45,105 @@ public class RegisterActivity extends AppCompatActivity {
         bolumAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); //Burada ise dropdown menü kullanacağımı belirtiyorum.
         bolumler.setAdapter(bolumAdapter); //Ben bu satırı yazmasaydım uygulama crash vermeyecekti fakat spinner'ın içine gönderdiğimiz data gözükmeyecekti.
 
+        //Casting Views
+        //EditText
+        edAdSoyad = findViewById(R.id.edittext_adsoyad);
+        edOgrenciNo = findViewById(R.id.edittext_ogrenciNo);
+        edEMail = findViewById(R.id.edittext_email);
+        edSifre = findViewById(R.id.edittext_password);
+        edSifreOnay = findViewById(R.id.edittext_confirmpassword);
+        //Spinner
+        spnBolumler = findViewById(R.id.spinnerBolum);
+        //Button
+        btnKayit = findViewById(R.id.btnKayit);
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("Ogrenci");
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+
+        btnKayit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final String ogrenci_no = edOgrenciNo.getText().toString();
+                final String ad_soyad = edAdSoyad.getText().toString();
+                final String email = edEMail.getText().toString();
+                final String sifre = edSifre.getText().toString();
+                String sifre_onay = edSifreOnay.getText().toString();
+                final String bolum = spnBolumler.getSelectedItem().toString();
+
+                if (TextUtils.isEmpty(ogrenci_no)) {
+                    Toast.makeText(RegisterActivity.this,"Öğrenci numarası boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                }
+
+                if (TextUtils.isEmpty(ad_soyad)) {
+                    Toast.makeText(RegisterActivity.this,"Ad ve soyad kısmı boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                }
+
+                if (TextUtils.isEmpty(email)) {
+                    Toast.makeText(RegisterActivity.this,"E-Posta adresi girmelisiniz.",Toast.LENGTH_LONG).show();
+                }
+
+                if (TextUtils.isEmpty(sifre)) {
+                    Toast.makeText(RegisterActivity.this,"Şifre kısmı boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                }
+
+                if (TextUtils.isEmpty(sifre_onay)) {
+                    Toast.makeText(RegisterActivity.this,"Şifrenizi onaylamanız gerekiyor.",Toast.LENGTH_LONG).show();
+                }
+
+                if (TextUtils.isEmpty(bolum)) {
+                    Toast.makeText(RegisterActivity.this,"Lütfen bir bölüm seçiniz.",Toast.LENGTH_LONG).show();
+                }
+
+                if (!sifre.equals(sifre_onay)) {
+                    Toast.makeText(RegisterActivity.this,"Şifreleriniz eşleşmiyor.",Toast.LENGTH_LONG).show();
+                }
+
+                emailCheck();
+                firebaseAuth.createUserWithEmailAndPassword(email, sifre)
+                        .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    Ogrenci ogrenci = new Ogrenci(ogrenci_no,ad_soyad,email,sifre,bolum);
+                                    FirebaseDatabase.getInstance().getReference("Ogrenci")
+                                            .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                            .setValue(ogrenci).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        @Override
+                                        public void onComplete(@NonNull Task<Void> task) {
+                                            Toast.makeText(RegisterActivity.this,
+                                                    "Kayıt olma işlemi başarılı.",Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                        }
+                                    });
+                                } else {
+
+                                }
+
+
+                            }
+                        });
+
+            }
+        });
+
     }
+
+    public void emailCheck() {
+        firebaseAuth.fetchSignInMethodsForEmail(edEMail.getText().toString())
+                .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
+                        boolean check = !task.getResult().getSignInMethods().isEmpty();
+
+                        if (check == true) {
+                            Toast.makeText(RegisterActivity.this,"E-postaya ait bir hesap zaten kayıtlı.",Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+    }
+
 
     public void girisYap(View view) { //Login sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

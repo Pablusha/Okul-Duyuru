@@ -18,19 +18,18 @@
         app:civ_border_width="2dp" />
 
     <EditText
-        android:id="@+id/edittext_ogretmenId"
+        android:id="@+id/edittext_ogretmenEmail"
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:paddingLeft="2dp"
         android:background="#ffffff"
-        android:maxLength="9"
-        android:inputType="number"
+        android:inputType="textEmailAddress"
         android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:hint="@string/ogretmenId"/>
+        android:hint="@string/eMail"/>
 
     <EditText
-        android:id="@+id/edittext_password"
+        android:id="@+id/edittext_ogretmenPassword"
         android:layout_width="190dp"
         android:layout_height="40dp"
         android:paddingLeft="2dp"
