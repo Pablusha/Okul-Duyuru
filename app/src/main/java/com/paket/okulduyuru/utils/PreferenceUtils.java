@@ -10,18 +10,18 @@ public class PreferenceUtils {
 
     }
 
-    public static String getOgrenciNo (Context context) {
+    public static String getEmail (Context context) {
         SharedPreferences ozellikler = PreferenceManager.getDefaultSharedPreferences(context);
         //defValue = Eğer preferences'i bulamazsa döndürülecek değer.
-        return ozellikler.getString(Sabit.KEY_OGRENCİ_NO,null);
+        return ozellikler.getString(Sabit.KEY_EMAİL,null);
     }
 
-    public static boolean saveOgrenciNo (String ogrenci_no,Context context) {
+    public static boolean saveEmail(String email,Context context) {
         SharedPreferences ozellikler = PreferenceManager.getDefaultSharedPreferences(context);
         //SharedPreferences.Editor = SharedPreferences sınıfı içinde sakladığımız değerler üzerinde değişiklik yapmamızı sağlayan bir interface.
         //Yeni bir editör oluşturma.
         SharedPreferences.Editor editor = ozellikler.edit();
-        editor.putString(Sabit.KEY_OGRENCİ_NO, ogrenci_no);
+        editor.putString(Sabit.KEY_EMAİL, email);
         //apply = commit
         editor.apply();
         return true;

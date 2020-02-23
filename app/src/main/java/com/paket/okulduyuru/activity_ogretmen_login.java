@@ -79,7 +79,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
                             Toast.makeText(activity_ogretmen_login.this,
                                     "E-Posta adresi veya şifre yanlış.",Toast.LENGTH_LONG).show();
                         } else {
-                            Toast.makeText(activity_ogretmen_login.this,"Öğretmen hesabı bulunamadı.",Toast.LENGTH_LONG).show();
+                            Toast.makeText(activity_ogretmen_login.this,"E-Posta adresi kayıtlı değil.",Toast.LENGTH_LONG).show();
                         }
 
                     }
