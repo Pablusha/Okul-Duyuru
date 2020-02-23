@@ -17,34 +17,50 @@
     Android:orientation özelliğini kullanarak yatay (horizontal) veya dikey(vertical) olarak konumlandırabiliriz.
     -->
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="127dp"
-        android:src="@drawable/arel"
-        android:layout_marginTop="160dp"
-        app:civ_border_color="#111111"
-        app:civ_border_width="2dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edittext_email"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:hint="@string/eMail"/>
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="127dp"
+            android:src="@drawable/arel"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="40dp"
+            app:civ_border_color="#111111"
+            app:civ_border_width="2dp" />
 
-    <EditText
-        android:id="@+id/edittext_password"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:paddingLeft="2dp"
-        android:inputType="textPassword"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_lock"
-        android:layout_marginTop="10dp"
-        android:hint="@string/password"/> <!-- Promp Text -->
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:hint="@string/eMail"/>
+
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:paddingLeft="2dp"
+            android:inputType="textPassword"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_lock"
+            android:layout_marginTop="10dp"
+            android:hint="@string/password"/> <!-- Promp Text -->
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnGiris"

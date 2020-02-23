@@ -41,7 +41,6 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-    private ValueEventListener valueEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +69,6 @@ public class RegisterActivity extends AppCompatActivity {
         btnKayit = findViewById(R.id.btnKayit);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Ogrenci");
-        databaseReference.addListenerForSingleValueEvent(valueEventListener);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -145,16 +143,6 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    public boolean ogrenciNoCheck() {
-        String ogrenci_no = edOgrenciNo.getText().toString();
-        Query query = FirebaseDatabase.getInstance().getReference("Ogrenci")
-                .orderByChild("ogrenci_no")
-                .equalTo(ogrenci_no);
-        query.addListenerForSingleValueEvent(valueEventListener);
-        Toast.makeText(RegisterActivity.this,"Öğrenci numarası kayıtlı.",Toast.LENGTH_LONG).show();
-        return true;
     }
 
 
