@@ -18,18 +18,6 @@
         app:civ_border_width="2dp" />
 
     <EditText
-        android:id="@+id/edittext_ogretmenId"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#ffffff"
-        android:maxLength="9"
-        android:inputType="number"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:hint="@string/ogretmenId"/>
-
-    <EditText
         android:id="@+id/edittext_adsoyad"
         android:layout_width="250dp"
         android:layout_height="40dp"

@@ -20,7 +20,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends AppCompatActivity {
-    private DatabaseHelper db;
     private TextView txtAdSoyad,txtArelWeb,txtDuyurular;
 
     @Override
@@ -32,13 +31,6 @@ public class HomeActivity extends AppCompatActivity {
         txtArelWeb = findViewById(R.id.txtArelWeb);
         txtDuyurular = findViewById(R.id.ac_home_tv_duyurular);
         txtArelWeb = findViewById(R.id.txtArelWeb);
-
-        db = new DatabaseHelper(this);
-        //Ad Ve Soyadı veritabanından çekiyoruz.
-        Cursor cursor = db.verilereUlas();
-        while (cursor.moveToNext()) {
-            txtAdSoyad.setText(cursor.getString(1));
-        }
 
         //Duyurular sayfasına geçiş..
         txtDuyurular.setOnClickListener(new View.OnClickListener() {
