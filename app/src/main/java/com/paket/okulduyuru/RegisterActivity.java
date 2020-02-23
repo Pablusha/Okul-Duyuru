@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -13,14 +14,24 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RegisterActivity extends AppCompatActivity {
@@ -30,6 +41,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
+    private ValueEventListener valueEventListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         btnKayit = findViewById(R.id.btnKayit);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Ogrenci");
+        databaseReference.addListenerForSingleValueEvent(valueEventListener);
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
@@ -99,6 +112,10 @@ public class RegisterActivity extends AppCompatActivity {
                     Toast.makeText(RegisterActivity.this,"Şifreleriniz eşleşmiyor.",Toast.LENGTH_LONG).show();
                 }
 
+                Map<String, String> userMap = new HashMap<>();
+
+                userMap.put("ogrenci_no",ogrenci_no);
+
                 emailCheck();
                 firebaseAuth.createUserWithEmailAndPassword(email, sifre)
                         .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
@@ -124,10 +141,22 @@ public class RegisterActivity extends AppCompatActivity {
                             }
                         });
 
+
             }
         });
 
     }
+
+    public boolean ogrenciNoCheck() {
+        String ogrenci_no = edOgrenciNo.getText().toString();
+        Query query = FirebaseDatabase.getInstance().getReference("Ogrenci")
+                .orderByChild("ogrenci_no")
+                .equalTo(ogrenci_no);
+        query.addListenerForSingleValueEvent(valueEventListener);
+        Toast.makeText(RegisterActivity.this,"Öğrenci numarası kayıtlı.",Toast.LENGTH_LONG).show();
+        return true;
+    }
+
 
     public void emailCheck() {
         firebaseAuth.fetchSignInMethodsForEmail(edEMail.getText().toString())
