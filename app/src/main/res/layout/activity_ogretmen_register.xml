@@ -9,13 +9,21 @@
     android:background="@color/colorLogin"
     tools:context=".activity_ogretmen_register">
 
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="wrap_content"
-        android:layout_height="127dp"
+        android:layout_height="110dp"
         android:src="@drawable/arel"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         app:civ_border_color="#111111"
         app:civ_border_width="2dp" />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/edittext_adsoyad"
@@ -70,7 +78,7 @@
 
     <Button
         android:id="@+id/btnKayit"
-        android:layout_width="190dp"
+        android:layout_width="250dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="@color/colorButton"

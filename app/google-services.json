@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "512829307506-cq3dguhuq9v6rtqtd8sj54g1qgrvmitf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.paket.okulduyuru",
+            "certificate_hash": "d33cdde2956d3315e48d1ada79060e68ff7529ac"
+          }
+        },
+        {
           "client_id": "512829307506-qkn7jb5no6m8n65mqa2espskb633p059.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
