@@ -165,12 +165,8 @@ public class RegisterActivity extends AppCompatActivity {
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
                     if (ds.child("ogrenci_no").exists()) {
                         Toast.makeText(RegisterActivity.this,"Öğrenci numarası zaten kayıtlı.",Toast.LENGTH_LONG).show();
-                        break;
                     }
-                    else if (ds.child("email").exists()) {
-                        Toast.makeText(RegisterActivity.this,"E-postaya ait bir hesap zaten kayıtlı.",Toast.LENGTH_LONG).show();
-                        break;
-                    }
+
                 }
             }
 
