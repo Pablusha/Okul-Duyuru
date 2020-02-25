@@ -33,13 +33,11 @@
 
     </LinearLayout>
 
-
-
-
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <EditText
             android:id="@+id/edittext_email"
             android:layout_width="190dp"

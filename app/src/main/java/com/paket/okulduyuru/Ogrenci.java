@@ -10,6 +10,9 @@ public class Ogrenci {
         this.bolum = bolum;
     }
 
+    public Ogrenci() {
+    }
+
     public String getOgrenci_no() {
         return ogrenci_no;
     }
