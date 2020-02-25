@@ -39,30 +39,13 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         txtAdSoyad = findViewById(R.id.adSoyad);
-        txtArelWeb = findViewById(R.id.txtArelWeb);
+        txtArelWeb = findViewById(R.id.ac_home_tv_arelweb);
         txtDuyurular = findViewById(R.id.ac_home_tv_duyurular);
-        txtArelWeb = findViewById(R.id.txtArelWeb);
+        getAdSoyad();
 
-        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-        DatabaseReference ogrenciRef = rootRef.child("Ogrenci");
-        user = FirebaseAuth.getInstance().getCurrentUser();
-        uid = user.getUid();
 
-        ValueEventListener eventListener = new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot ds: dataSnapshot.getChildren()) {
-                    String ad_soyad = dataSnapshot.child(uid).child("ad_soyad").getValue(String.class);
-                    txtAdSoyad.setText(ad_soyad);
-                }
-            }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
 
-            }
-        };
-        ogrenciRef.addListenerForSingleValueEvent(eventListener);
 
 
         //Duyurular sayfasına geçiş..
@@ -85,5 +68,29 @@ public class HomeActivity extends AppCompatActivity {
 
 
     }
+
+    private void getAdSoyad() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ogrenciRef = rootRef.child("Ogrenci");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                    String ad_soyad = dataSnapshot.child(uid).child("ad_soyad").getValue(String.class);
+                    txtAdSoyad.setText(ad_soyad);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        ogrenciRef.addListenerForSingleValueEvent(eventListener);
+    }
+
     }
 

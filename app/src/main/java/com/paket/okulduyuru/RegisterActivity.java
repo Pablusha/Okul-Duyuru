@@ -42,7 +42,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-    private FirebaseUser firebaseUser;
+    private FirebaseUser user;
     private String uid;
 
     @Override
@@ -88,26 +88,32 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(ogrenci_no)) {
                     Toast.makeText(RegisterActivity.this,"Öğrenci numarası boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(ad_soyad)) {
                     Toast.makeText(RegisterActivity.this,"Ad ve soyad kısmı boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(RegisterActivity.this,"E-Posta adresi girmelisiniz.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(sifre)) {
                     Toast.makeText(RegisterActivity.this,"Şifre kısmı boş bırakılamaz.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(sifre_onay)) {
                     Toast.makeText(RegisterActivity.this,"Şifrenizi onaylamanız gerekiyor.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (TextUtils.isEmpty(bolum)) {
                     Toast.makeText(RegisterActivity.this,"Lütfen bir bölüm seçiniz.",Toast.LENGTH_LONG).show();
+                    return;
                 }
 
                 if (!sifre.equals(sifre_onay)) {
@@ -118,7 +124,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                 userMap.put("ogrenci_no",ogrenci_no);
 
-                emailCheck();
+                ogrenciNoCheck();
                 firebaseAuth.createUserWithEmailAndPassword(email, sifre)
                         .addOnCompleteListener(RegisterActivity.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -149,8 +155,35 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
+    private void ogrenciNoCheck() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ogrenciRef = rootRef.child("Ogrenci");
 
-    public void emailCheck() {
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                    if (ds.child("ogrenci_no").exists()) {
+                        Toast.makeText(RegisterActivity.this,"Öğrenci numarası zaten kayıtlı.",Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                    else if (ds.child("email").exists()) {
+                        Toast.makeText(RegisterActivity.this,"E-postaya ait bir hesap zaten kayıtlı.",Toast.LENGTH_LONG).show();
+                        break;
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        ogrenciRef.addListenerForSingleValueEvent(eventListener);
+    }
+
+
+    private boolean emailCheck() {
         firebaseAuth.fetchSignInMethodsForEmail(edEMail.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                     @Override
@@ -160,13 +193,14 @@ public class RegisterActivity extends AppCompatActivity {
                         if (check == true) {
                             Toast.makeText(RegisterActivity.this,"E-postaya ait bir hesap zaten kayıtlı.",Toast.LENGTH_LONG).show();
                         }
+
                     }
                 });
-
+        return true;
     }
 
 
-    public void girisYap(View view) { //Login sayfasına geçiş.
+    private void girisYap(View view) { //Login sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
     }

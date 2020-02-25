@@ -25,56 +25,63 @@
 
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/edittext_adsoyad"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_person_black_24dp"
-        android:hint="@string/adSoyad" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edittext_email"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
-        android:hint="@string/eMail"/>
+        <EditText
+            android:id="@+id/edittext_adsoyad"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_person_black_24dp"
+            android:hint="@string/adSoyad" />
 
-    <EditText
-        android:id="@+id/edittext_password"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
-        android:inputType="textPassword"
-        android:hint="@string/password"/>
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
+            android:hint="@string/eMail"/>
 
-    <EditText
-        android:id="@+id/edittext_confirmpassword"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:inputType="textPassword"
-        android:background="#ffffff"
-        android:drawableLeft="@drawable/ic_lock_black_24dp"
-        android:hint="@string/confirmPassword"/>
+        <EditText
+            android:id="@+id/edittext_password"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
+            android:inputType="textPassword"
+            android:hint="@string/password"/>
 
-    <Spinner
-        android:id="@+id/spinnerBolum"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="10dp"
-        android:paddingLeft="2dp"
-        android:background="#D3FFFFFF"
-        android:hint="@string/bolum"/>
+        <EditText
+            android:id="@+id/edittext_confirmpassword"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:inputType="textPassword"
+            android:background="#ffffff"
+            android:drawableLeft="@drawable/ic_lock_black_24dp"
+            android:hint="@string/confirmPassword"/>
+
+        <Spinner
+            android:id="@+id/spinnerBolum"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="2dp"
+            android:background="#D3FFFFFF"
+            android:hint="@string/bolum"/>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnKayit"

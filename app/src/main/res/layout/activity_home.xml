@@ -101,74 +101,74 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="90dp"
-        android:elevation="5dp"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="485dp"
-        android:src="@drawable/arel" />
-
-    <TextView
-        android:layout_width="142dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="470dp"
-        android:background="@drawable/roundrect"
-        android:textAlignment="center"
-        android:textColor="#ffffff"
-
-        android:id="@+id/txtArelWeb" />
-
-
-
-
-
-    <TextView
+    <RelativeLayout
+        android:id="@+id/ac_home_rl_bottom_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="580dp"
-        android:layout_marginLeft="60dp"
-        android:textColor="#ffffff"
-        android:text="@string/arelweb"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="20sp" />
+        android:layout_below="@id/ac_home_rl_buttons"
+        android:layout_marginTop="20dp"
+        android:padding="30dp"
+        android:paddingTop="50dp"
+        android:rowCount="4"
+        android:columnCount="4">
 
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="90dp"
-        android:elevation="5dp"
-        android:layout_marginLeft="280dp"
-        android:layout_marginTop="485dp"
-        android:src="@drawable/etkinlikler" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <RelativeLayout
+                android:id="@+id/ac_home_cv_arelweb"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/roundrect">
+                <ImageView
+                    android:id="@+id/ac_home_iv_arelweb"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/arel"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"/>
 
-    <TextView
-        android:layout_width="142dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="470dp"
-        android:background="@drawable/roundrect"
-        android:textAlignment="center"
-        android:textColor="#ffffff" />
+                <TextView
+                    android:id="@+id/ac_home_tv_arelweb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/ac_home_iv_arelweb"
+                    android:layout_marginTop="20dp"
+                    android:textSize="24sp"
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/arelweb"/>
+            </RelativeLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="142dp"
-        android:layout_height="150dp"
-        android:layout_marginLeft="240dp"
-        android:layout_marginTop="470dp"
-        android:background="@drawable/roundrect"
-        android:textAlignment="center"
-        android:textColor="#ffffff" />
+            <RelativeLayout
+                android:id="@+id/ac_home_cv_etkinlikler"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:background="@drawable/roundrect"
+                android:layout_alignParentEnd="true">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="580dp"
-        android:layout_marginLeft="270dp"
-        android:textColor="#ffffff"
-        android:text="@string/etkinlikler"
-        android:fontFamily="sans-serif-medium"
-        android:textSize="20sp" />
+                <ImageView
+                    android:id="@+id/ac_home_iv_etkinlikler"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/etkinlikler"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp" />
 
+                <TextView
+                    android:id="@+id/ac_home_tv_etkinlikler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/ac_home_iv_etkinlikler"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorWhite"
+                    android:text="@string/etkinlikler"
+                    android:textSize="24sp"/>
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+    
 </RelativeLayout>
