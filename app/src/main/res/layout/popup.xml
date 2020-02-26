@@ -23,20 +23,20 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="150dp"
-        android:src="@drawable/information"
-        android:layout_marginTop="70dp" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:src="@drawable/information"
+            android:layout_marginTop="70dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bilgiMesaji"
-        android:textStyle="bold"
-        android:textColor="@color/colorWhite"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bilgiMesaji"
+            android:textStyle="bold"
+            android:textColor="@color/colorWhite"
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp" />
 
     </LinearLayout>
 

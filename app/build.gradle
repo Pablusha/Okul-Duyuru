@@ -27,7 +27,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     //Android Studio'da kare,dikdörtgen ve benzeri nesneleri kullanmak için import ettiğim kütüphane.
     implementation 'com.github.florent37:shapeofview:1.3.2'
-    //Resmi çember yapmak için kullandığım kütüphane
+    //Resimi çember yapmak için kullandığım kütüphane
     implementation 'de.hdodenhof:circleimageview:3.0.1'
     implementation 'com.google.android.material:material:1.1.0'
     implementation 'androidx.annotation:annotation:1.1.0'

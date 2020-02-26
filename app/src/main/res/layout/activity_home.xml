@@ -24,7 +24,6 @@
             android:paddingRight="20dp"
             android:drawableTint="@color/colorPrimary" />
 
-
         <TextView
             android:id="@+id/adSoyad"
             android:layout_width="match_parent"

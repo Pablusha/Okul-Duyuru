@@ -55,7 +55,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(),activity_ogretmen_yeni_duyuru.class));
+                                    startActivity(new Intent(getApplicationContext(),activity_ogretmen_home.class));
                                 } else {
                                     emailCheck();
                                 }
