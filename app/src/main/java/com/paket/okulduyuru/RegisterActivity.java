@@ -196,7 +196,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
-    private void girisYap(View view) { //Login sayfasına geçiş.
+    public void girisYap(View view) { //Login sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
         startActivity(intent);
     }

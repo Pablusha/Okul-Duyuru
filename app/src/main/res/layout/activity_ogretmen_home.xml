@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#3A2850"
-    tools:context=".HomeActivity">
+    tools:context=".activity_ogretmen_home"
+    android:background="#C3E4E2">
 
     <RelativeLayout
-        android:id="@+id/ac_home_rl_title"
+        android:id="@+id/ac_ogretmen_home_rl_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="30dp"
@@ -24,7 +24,6 @@
             android:paddingRight="20dp"
             android:drawableTint="@color/colorPrimary" />
 
-
         <TextView
             android:id="@+id/adSoyad"
             android:layout_width="match_parent"
@@ -36,10 +35,10 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ac_home_rl_buttons"
+        android:id="@+id/ac_ogretmen_home_rl_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ac_home_rl_title"
+        android:layout_below="@id/ac_ogretmen_home_rl_title"
         android:layout_marginTop="20dp"
         android:padding="30dp"
         android:paddingTop="50dp"
@@ -54,13 +53,13 @@
             android:orientation="horizontal">
 
             <RelativeLayout
-                android:id="@+id/ac_home_cv_duyurular"
+                android:id="@+id/ac_ogretmen_home_cv_duyuru_yonetim"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/roundrect">
 
                 <ImageView
-                    android:id="@+id/ac_home_iv_duyurular"
+                    android:id="@+id/ac_ogretmen_home_iv_duyuru_yonetim"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_centerHorizontal="true"
@@ -68,10 +67,10 @@
                     android:src="@drawable/duyurular" />
 
                 <TextView
-                    android:id="@+id/ac_home_tv_duyurular"
+                    android:id="@+id/ac_ogretmen_home_tv_duyuru_yonetim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/ac_home_iv_duyurular"
+                    android:layout_below="@id/ac_ogretmen_home_iv_duyuru_yonetim"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"
                     android:text="@string/duyurular"
@@ -80,24 +79,24 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/ac_home_cv_message"
+                android:id="@+id/ac_ogretmen_home_cv_message"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/roundrect"
                 android:layout_alignParentEnd="true">
                 <ImageView
-                    android:id="@+id/ac_home_iv_message"
+                    android:id="@+id/ac_ogretmen_home_iv_message"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/chat"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="20dp"/>
                 <TextView
-                    android:id="@+id/ac_home_tv_message"
+                    android:id="@+id/ac_ogretmen_home_tv_message"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ac_home_iv_message"
+                    android:layout_below="@id/ac_ogretmen_home_iv_message"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorWhite"
                     android:textSize="24sp"
@@ -107,10 +106,10 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/ac_home_rl_bottom_buttons"
+        android:id="@+id/ac_ogretmen_home_rl_bottom_buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/ac_home_rl_buttons"
+        android:layout_below="@id/ac_ogretmen_home_rl_buttons"
         android:layout_marginTop="20dp"
         android:padding="30dp"
         android:paddingTop="50dp"
@@ -124,12 +123,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <RelativeLayout
-                android:id="@+id/ac_home_cv_arelweb"
+                android:id="@+id/ac_ogretmen_home_cv_arelweb"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/roundrect">
                 <ImageView
-                    android:id="@+id/ac_home_iv_arelweb"
+                    android:id="@+id/ac_ogretmen_home_iv_arelweb"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/arel"
@@ -137,11 +136,11 @@
                     android:layout_marginTop="20dp"/>
 
                 <TextView
-                    android:id="@+id/ac_home_tv_arelweb"
+                    android:id="@+id/ac_ogretmen_home_tv_arelweb"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@id/ac_home_iv_arelweb"
+                    android:layout_below="@id/ac_ogretmen_home_iv_arelweb"
                     android:layout_marginTop="20dp"
                     android:textSize="24sp"
                     android:textColor="@color/colorWhite"
@@ -149,14 +148,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/ac_home_cv_etkinlikler"
+                android:id="@+id/ac_ogretmen_home_cv_etkinlik_yonetim"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/roundrect"
                 android:layout_alignParentEnd="true">
 
                 <ImageView
-                    android:id="@+id/ac_home_iv_etkinlikler"
+                    android:id="@+id/ac_ogretmen_home_iv_etkinlik_yonetim"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/etkinlikler"
@@ -164,11 +163,11 @@
                     android:layout_marginTop="20dp" />
 
                 <TextView
-                    android:id="@+id/ac_home_tv_etkinlikler"
+                    android:id="@+id/ac_ogretmen_home_tv_etkinlik_yonetim"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ac_home_iv_etkinlikler"
+                    android:layout_below="@+id/ac_ogretmen_home_iv_etkinlik_yonetim"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorWhite"
                     android:text="@string/etkinlikler"
@@ -177,5 +176,9 @@
             </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
+
+
+
+
 
 </RelativeLayout>
