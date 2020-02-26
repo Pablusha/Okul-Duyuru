@@ -29,7 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class HomeActivity extends AppCompatActivity {
-    private TextView txtAdSoyad,txtArelWeb,txtDuyurular;
+    private TextView txtAdSoyad;
+    private RelativeLayout rlDuyurular,rlArelWeb;
     private FirebaseUser user;
     private String uid;
 
@@ -39,8 +40,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         txtAdSoyad = findViewById(R.id.adSoyad);
-        txtArelWeb = findViewById(R.id.ac_home_tv_arelweb);
-        txtDuyurular = findViewById(R.id.ac_home_tv_duyurular);
+        rlArelWeb = findViewById(R.id.ac_home_cv_arelweb);
+        rlDuyurular = findViewById(R.id.ac_home_cv_duyurular);
         getAdSoyad();
 
 
@@ -49,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         //Duyurular sayfasına geçiş..
-        txtDuyurular.setOnClickListener(new View.OnClickListener() {
+        rlDuyurular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,OgrenciDuyuruActivity.class);
@@ -58,7 +59,7 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         //Arel Web sayfasına geçiş.
-        txtArelWeb.setOnClickListener(new View.OnClickListener() {
+        rlArelWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ArelWebView.class);
@@ -92,5 +93,5 @@ public class HomeActivity extends AppCompatActivity {
         ogrenciRef.addListenerForSingleValueEvent(eventListener);
     }
 
-    }
+}
 
