@@ -90,7 +90,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void emailCheck() {
+    private void emailCheck() {
         firebaseAuth.fetchSignInMethodsForEmail(edEmail.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
                     @Override
