@@ -111,7 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                if (TextUtils.isEmpty(bolum)) {
+                if (bolum == null) {
                     Toast.makeText(RegisterActivity.this,"Lütfen bir bölüm seçiniz.",Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -163,7 +163,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
-                    if (ds.child("ogrenci_no").exists()) {
+                    if (dataSnapshot.child("ogrenci_no").exists()) {
                         Toast.makeText(RegisterActivity.this,"Öğrenci numarası zaten kayıtlı.",Toast.LENGTH_LONG).show();
                     }
 
