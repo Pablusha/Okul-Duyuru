@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     tools:context=".activity_ogretmen_home"
-    android:background="#C3E4E2">
+    android:background="#C46848">
 
     <RelativeLayout
         android:id="@+id/ac_ogretmen_home_rl_title"

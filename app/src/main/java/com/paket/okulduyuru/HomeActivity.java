@@ -45,10 +45,6 @@ public class HomeActivity extends AppCompatActivity {
         getAdSoyad();
 
 
-
-
-
-
         //Duyurular sayfasına geçiş..
         rlDuyurular.setOnClickListener(new View.OnClickListener() {
             @Override
