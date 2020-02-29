@@ -9,19 +9,19 @@
     android:id="@+id/drawerLayout"
     >
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".OgrenciDuyuruActivity"
-        android:background="#D3C9C9">
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      tools:context=".OgrenciDuyuruActivity"
+      android:background="@color/backgroundDuyurular">
 
-        <include layout="@layout/toolbar">
+    <include layout="@layout/toolbar">
 
-        </include>
+    </include>
 
-    </RelativeLayout>
+  </RelativeLayout>
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

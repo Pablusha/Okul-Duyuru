@@ -8,19 +8,19 @@ import android.webkit.WebViewClient;
 
 public class ArelWebView extends AppCompatActivity {
 
-    private WebView webView;
+  private WebView webView;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arel_web_view);
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_arel_web_view);
 
 
 
-        webView=(WebView)findViewById(R.id.webView);
+    webView=(WebView)findViewById(R.id.webView);
 
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://www.arel.edu.tr");
-    }
+    webView.getSettings().setJavaScriptEnabled(true);
+    webView.setWebViewClient(new WebViewClient());
+    webView.loadUrl("https://www.arel.edu.tr");
+  }
 }

@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,8 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,15 +22,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.HashMap;
-import java.util.Map;
-
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText edAdSoyad,edOgrenciNo,edSifre,edEMail,edSifreOnay;
@@ -52,12 +42,18 @@ public class RegisterActivity extends AppCompatActivity {
 
         Spinner bolumler = (Spinner) findViewById(R.id.spinnerBolum); //Spinner'ımı tanımlıyorum.
 
-        //ArrayAdapter şu işe yarıyor; Spinner'ın içindeki dataları ArrayAdapterla tutabiliyoruz.Burada Adapter ile Spinner'ı entegre ediyorum.
+        //ArrayAdapter şu işe yarıyor;
+        //Spinner'ın içindeki dataları ArrayAdapterla tutabiliyoruz.Burada Adapter ile Spinner'ı entegre ediyorum.
         ArrayAdapter<String> bolumAdapter = new ArrayAdapter<String>(RegisterActivity.this,
                 android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.bolumler));
-        //Arg1:Benim Contextim yani uygulamam.Arg2:Datalarımı tuttuğum resource dosyasıdır.Arg4:Data seti için oluşturduğum diziyi get ediyorum.
-        bolumAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item); //Burada ise dropdown menü kullanacağımı belirtiyorum.
-        bolumler.setAdapter(bolumAdapter); //Ben bu satırı yazmasaydım uygulama crash vermeyecekti fakat spinner'ın içine gönderdiğimiz data gözükmeyecekti.
+        //Arg1:Benim Contextim yani uygulamam.
+        //Arg2:Datalarımı tuttuğum resource dosyasıdır.
+        //Arg4:Data seti için oluşturduğum diziyi get ediyorum.
+
+        bolumAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        //Burada ise dropdown menü kullanacağımı belirtiyorum.
+        bolumler.setAdapter(bolumAdapter);
+        //Ben bu satırı yazmasaydım uygulama crash vermeyecekti fakat spinner'ın içine gönderdiğimiz data gözükmeyecekti.
 
         //Casting Views
         //EditText
@@ -119,10 +115,6 @@ public class RegisterActivity extends AppCompatActivity {
                 if (!sifre.equals(sifre_onay)) {
                     Toast.makeText(RegisterActivity.this,"Şifreleriniz eşleşmiyor.",Toast.LENGTH_LONG).show();
                 }
-
-                Map<String, String> userMap = new HashMap<>();
-
-                userMap.put("ogrenci_no",ogrenci_no);
 
                 ogrenciNoCheck();
                 firebaseAuth.createUserWithEmailAndPassword(email, sifre)

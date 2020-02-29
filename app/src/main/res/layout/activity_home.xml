@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:background="#3A2850"
+    android:background="@color/ogrenciHomeBackground"
     tools:context=".HomeActivity">
 
     <RelativeLayout
@@ -23,7 +23,6 @@
             android:drawableRight="@drawable/ic_user"
             android:paddingRight="20dp"
             android:drawableTint="@color/colorPrimary" />
-
 
         <TextView
             android:id="@+id/adSoyad"
