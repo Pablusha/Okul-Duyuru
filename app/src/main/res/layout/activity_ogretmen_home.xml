@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".activity_ogretmen_home"
-    android:background="#C46848">
+    tools:context=".activity_ogretmen_home">
 
     <RelativeLayout
         android:id="@+id/ac_ogretmen_home_rl_title"
