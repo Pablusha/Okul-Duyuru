@@ -20,7 +20,7 @@
             android:src="@drawable/arel"
             android:layout_marginTop="50dp"
             android:layout_marginBottom="20dp"
-            app:civ_border_color="#111111"
+            app:civ_border_color="@color/borderColor"
             app:civ_border_width="2dp" />
 
     </LinearLayout>
@@ -36,7 +36,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
-            android:background="#ffffff"
+            android:background="@color/colorWhite"
             android:maxLength="9"
             android:inputType="number"
             android:drawableLeft="@drawable/ic_person_black_24dp"
@@ -48,7 +48,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
-            android:background="#ffffff"
+            android:background="@color/colorWhite"
             android:drawableLeft="@drawable/ic_person_black_24dp"
             android:hint="@string/adSoyad" />
 
@@ -58,7 +58,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
-            android:background="#ffffff"
+            android:background="@color/colorWhite"
             android:drawableLeft="@drawable/ic_mail_outline_black_24dp"
             android:hint="@string/eMail"/>
 
@@ -68,7 +68,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
-            android:background="#ffffff"
+            android:background="@color/colorWhite"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
             android:inputType="textPassword"
             android:hint="@string/password"/>
@@ -80,7 +80,7 @@
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
             android:inputType="textPassword"
-            android:background="#ffffff"
+            android:background="@color/colorWhite"
             android:drawableLeft="@drawable/ic_lock_black_24dp"
             android:hint="@string/confirmPassword"/>
 
@@ -90,7 +90,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="10dp"
             android:paddingLeft="2dp"
-            android:background="#D3FFFFFF"
+            android:background="@color/spinnerColor"
             android:hint="@string/bolum"/>
 
     </LinearLayout>
@@ -102,7 +102,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/colorButton"
         android:textSize="15sp"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:text="@string/btn_kayitOl"/>
 
     <LinearLayout
@@ -114,7 +114,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorWhite"
             android:text="@string/kayitli"/>
 
         <TextView
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="2dp"
             android:textStyle="bold"
-            android:textColor="#FCFCFC"
+            android:textColor="@color/girisYapText"
             android:text="@string/girisYap"
             android:onClick="girisYap"/>
     </LinearLayout>

@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    imgLogo = (CircleImageView)findViewById(R.id.arel); //R Sınıfı uygulamamızdaki bütün resoource'lara erişmemizi sağlıyor.Her resource için ayrı bir R alt sınıfı vardır.
+    imgLogo = (CircleImageView)findViewById(R.id.arel); //R Sınıfı uygulamamızdaki bütün resoource'lara erişmemizi sağlıyor.
+    // Her bir resource için ayrı bir R alt sınıfı vardır.
 
     Animation animation = AnimationUtils.loadAnimation(this,R.anim.animation);
     imgLogo.startAnimation(animation);

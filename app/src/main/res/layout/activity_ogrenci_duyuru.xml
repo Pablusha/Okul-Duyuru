@@ -15,7 +15,7 @@
       android:layout_width="match_parent"
       android:layout_height="match_parent"
       tools:context=".OgrenciDuyuruActivity"
-      android:background="#D3C9C9">
+      android:background="@color/backgroundDuyurular">
 
     <include layout="@layout/toolbar">
 

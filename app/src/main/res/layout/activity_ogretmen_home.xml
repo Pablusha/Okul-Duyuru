@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    tools:context=".activity_ogretmen_home">
+    tools:context=".activity_ogretmen_home"
+    android:background="@color/ogretmenHomeBackground">
 
     <RelativeLayout
         android:id="@+id/ac_ogretmen_home_rl_title"
@@ -21,7 +22,7 @@
             android:textSize="25sp"
             android:drawableRight="@drawable/ic_user"
             android:paddingRight="20dp"
-            android:drawableTint="@color/colorPrimary" />
+            android:drawableTint="@color/userIcon" />
 
         <TextView
             android:id="@+id/adSoyad"
@@ -55,7 +56,7 @@
                 android:id="@+id/ac_ogretmen_home_cv_duyuru_yonetim"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:background="@drawable/roundrect">
+                android:background="@drawable/ogretmen_roundrect">
 
                 <ImageView
                     android:id="@+id/ac_ogretmen_home_iv_duyuru_yonetim"
@@ -81,7 +82,7 @@
                 android:id="@+id/ac_ogretmen_home_cv_message"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:background="@drawable/roundrect"
+                android:background="@drawable/ogretmen_roundrect"
                 android:layout_alignParentEnd="true">
                 <ImageView
                     android:id="@+id/ac_ogretmen_home_iv_message"
@@ -125,7 +126,7 @@
                 android:id="@+id/ac_ogretmen_home_cv_arelweb"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:background="@drawable/roundrect">
+                android:background="@drawable/ogretmen_roundrect">
                 <ImageView
                     android:id="@+id/ac_ogretmen_home_iv_arelweb"
                     android:layout_width="60dp"
@@ -150,7 +151,7 @@
                 android:id="@+id/ac_ogretmen_home_cv_etkinlik_yonetim"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-                android:background="@drawable/roundrect"
+                android:background="@drawable/ogretmen_roundrect"
                 android:layout_alignParentEnd="true">
 
                 <ImageView

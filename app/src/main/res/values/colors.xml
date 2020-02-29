@@ -8,4 +8,13 @@
     <color name="colorToolbar">#EB1D66</color>
     <color name="colorLogin">#035AB6</color>
     <color name="colorButton">#B88E3E</color>
+    <color name="userIcon">#081C77</color>
+    <color name="backgroundDuyurular">#D3C9C9</color>
+    <color name="borderColor">#111111</color>
+    <color name="kayitOlText">#FCFCFC</color>
+    <color name="spinnerColor">#D3FFFFFF</color>
+    <color name="girisYapText">#FCFCFC</color>
+    <color name="ogrenciHomeBackground">#3A2850</color>
+    <color name="splashScreenBorderColor">#FF000000</color>
+    <color name="ogretmenHomeBackground">#42568D</color>
 </resources>

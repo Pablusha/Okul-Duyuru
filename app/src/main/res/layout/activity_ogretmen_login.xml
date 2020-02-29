@@ -19,7 +19,7 @@
         android:layout_height="127dp"
         android:src="@drawable/arel"
         android:layout_marginTop="160dp"
-        app:civ_border_color="#111111"
+        app:civ_border_color="@color/borderColor"
         app:civ_border_width="2dp" />
 
   </LinearLayout>
@@ -35,7 +35,7 @@
         android:layout_height="40dp"
         android:layout_marginTop="15dp"
         android:paddingLeft="2dp"
-        android:background="#ffffff"
+        android:background="@color/colorWhite"
         android:inputType="textEmailAddress"
         android:drawableLeft="@drawable/ic_person_black_24dp"
         android:hint="@string/eMail"/>
@@ -46,7 +46,7 @@
         android:layout_height="40dp"
         android:paddingLeft="2dp"
         android:inputType="textPassword"
-        android:background="#ffffff"
+        android:background="@color/colorWhite"
         android:drawableLeft="@drawable/ic_lock"
         android:layout_marginTop="10dp"
         android:hint="@string/password"/>
@@ -60,7 +60,7 @@
       android:layout_marginTop="20dp"
       android:background="@color/colorButton"
       android:textSize="15sp"
-      android:textColor="#ffffff"
+      android:textColor="@color/colorWhite"
       android:text="@string/btn_giris"/>
 
   <LinearLayout
@@ -72,7 +72,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:text="@string/kayitliDegil3"/>
 
     <TextView
@@ -81,7 +81,7 @@
         android:layout_height="35dp"
         android:paddingLeft="3dp"
         android:textStyle="bold"
-        android:textColor="#FCFCFC"
+        android:textColor="@color/kayitOlText"
         android:text="@string/kayitliDegil2"
         android:onClick="kayitOl"/>
   </LinearLayout>
