@@ -22,7 +22,7 @@
             android:textSize="25sp"
             android:drawableRight="@drawable/ic_user"
             android:paddingRight="20dp"
-            android:drawableTint="@color/userIcon" />
+            android:drawableTint="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/adSoyad"
