@@ -1,37 +1,40 @@
 <resources>
-  <string name="app_name">Okul Duyuru Sistemi</string>
-  <string name="btn_giris">GİRİŞ YAP</string>
-  <string name="btn_kayitOl">Kayıt Ol</string>
-  <string name="ogrenciNo">Öğrenci No:</string>
-  <string name="password">Şifre:</string>
-  <string name="confirmPassword">Şifrenizi Onaylayın:</string>
-  <string name="kayitliDegil">Kayıtlı değil misin?</string>
-  <string name="kayitli">Zaten bir hesabın var mı?</string>
-  <string name="girisYap">Giriş Yap</string>
-  <string name="kayitliDegil2">KAYIT OL</string>
-  <string name="adSoyad">Ad Ve Soyad:</string>
-  <string name="soyad">Soyad:</string>
-  <string name="eMail">E-Posta:</string>
-  <string name="bolum">Bölümünüzü Seçiniz:</string>
-  <string-array name="bolumler">
-    <item>Bölüm Seçiniz:</item>
-    <item>Bilgisayar Programcılığı</item>
-    <item>Bilgisayar Programcılığı(İÖ)</item>
-    <item>Anestezi</item>
-    <item>Yazılım Mühendisliği</item>
-  </string-array>
-  <string name="hosgeldin">Hoşgeldin!</string>
-  <string name="duyurular">Duyurular</string>
-  <string name="mesajlasma">Mesajlaşma</string>
-  <string name="arelweb">Arel Web</string>
-  <string name="etkinlikler">Etkinlikler</string>
-  <string name="ogretmenGiris">Öğretmen Girişi</string>
-  <string name="ogretmenId">Öğretmen ID:</string>
-  <string name="kayitliDegil3">Kayıtlı Değil Misiniz?</string>
-  <string name="kayitli2">Zaten bir hesaba sahip misiniz?</string>
-  <string name="popUp">X</string>
-  <string name="bilgiMesaji">Eğer bir Öğretmen ID\ye sahip değilseniz, kendi ID numaranız hakkında okulumuzun
+    <string name="app_name">Okul Duyuru Sistemi</string>
+    <string name="btn_giris">GİRİŞ YAP</string>
+    <string name="btn_kayitOl">Kayıt Ol</string>
+    <string name="ogrenciNo">Öğrenci No:</string>
+    <string name="password">Şifre:</string>
+    <string name="confirmPassword">Şifrenizi Onaylayın:</string>
+    <string name="kayitliDegil">Kayıtlı değil misin?</string>
+    <string name="kayitli">Zaten bir hesabın var mı?</string>
+    <string name="girisYap">Giriş Yap</string>
+    <string name="kayitliDegil2">KAYIT OL</string>
+    <string name="adSoyad">Ad Ve Soyad:</string>
+    <string name="soyad">Soyad:</string>
+    <string name="eMail">E-Posta:</string>
+    <string name="bolum">Bölümünüzü Seçiniz:</string>
+    <string-array name="bolumler">
+        <item>Bölüm Seçiniz:</item>
+        <item>Bilgisayar Programcılığı</item>
+        <item>Bilgisayar Programcılığı(İÖ)</item>
+        <item>Anestezi</item>
+        <item>Yazılım Mühendisliği</item>
+    </string-array>
+    <string name="hosgeldin">Hoşgeldin!</string>
+    <string name="duyurular">Duyurular</string>
+    <string name="mesajlasma">Mesajlaşma</string>
+    <string name="arelweb">Arel Web</string>
+    <string name="etkinlikler">Etkinlikler</string>
+    <string name="ogretmenGiris">Öğretmen Girişi</string>
+    <string name="ogretmenId">Öğretmen ID:</string>
+    <string name="kayitliDegil3">Kayıtlı Değil Misiniz?</string>
+    <string name="kayitli2">Zaten bir hesaba sahip misiniz?</string>
+    <string name="popUp">X</string>
+    <string name="bilgiMesaji">Eğer bir Öğretmen ID\ye sahip değilseniz, kendi ID numaranız hakkında okulumuzun
         Bilgisayar Programcılığı Bölüm başkanından bilgi alabilirsiniz.</string>
-  <string name="bilgiMesajiKapat">KAPAT</string>
-  <string name="anasayfa">Anasayfa</string>
+    <string name="bilgiMesajiKapat">KAPAT</string>
+    <string name="anasayfa">Anasayfa</string>
+    <string name="duyuruEkle">Duyuru Ekle</string>
+    <string name="duyuruGuncelle">Duyuru Güncelle</string>
+    <string name="duyuruSil">Duyuru Sil</string>
 </resources>

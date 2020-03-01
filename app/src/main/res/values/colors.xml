@@ -17,4 +17,5 @@
     <color name="ogrenciHomeBackground">#3A2850</color>
     <color name="splashScreenBorderColor">#FF000000</color>
     <color name="ogretmenHomeBackground">#42568D</color>
+    <color name="black">#000000</color>
 </resources>
