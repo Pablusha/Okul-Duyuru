@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    tools:context=".activity_ogretmen_duyuru_yonetim"
+    android:background="@drawable/duyuru_yonetim_background">
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_yonetim_add_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:padding="@dimen/_30sdp"
+        android:paddingTop="@dimen/_50sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ac_ogretmen_duyuru_add"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/ogretmen_duyuru_yonetim_roundrect"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/duyuruEkle"
+                    android:textSize="@dimen/_17sdp"
+                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_23sdp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_yonetim_delete_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/ac_ogretmen_duyuru_yonetim_add_button"
+        android:padding="@dimen/_30sdp"
+        android:paddingTop="@dimen/_50sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ac_ogretmen_duyuru_delete"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/ogretmen_duyuru_yonetim_roundrect"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/duyuruSil"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_17sdp"
+                    android:layout_marginTop="@dimen/_23sdp"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_yonetim_update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_below="@id/ac_ogretmen_duyuru_yonetim_delete_button"
+        android:padding="@dimen/_30sdp"
+        android:paddingTop="@dimen/_50sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/ac_ogretmen_duyuru_update"
+                android:layout_width="@dimen/_160sdp"
+                android:layout_height="@dimen/_70sdp"
+                android:background="@drawable/ogretmen_duyuru_yonetim_roundrect"
+                android:layout_centerHorizontal="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/duyuruGuncelle"
+                    android:textSize="@dimen/_17sdp"
+                    android:textColor="@color/black"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="@dimen/_23sdp" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+</RelativeLayout>
