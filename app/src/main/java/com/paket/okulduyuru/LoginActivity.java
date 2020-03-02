@@ -44,6 +44,16 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        try {
+            String email = edEmail.getText().toString();
+            String sifre = edSifre.getText().toString();
+            if (chkBeniHatirla.isChecked()) {
+                Paper.book().write(Sabit.KEY_EMAIL,email);
+                Paper.book().write(Sabit.KEY_SIFRE,sifre);
+            }
+        } catch (Exception e) {
+        }
+
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,15 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        try {
-            String email = edEmail.getText().toString();
-            String sifre = edSifre.getText().toString();
-            if (chkBeniHatirla.isChecked()) {
-                Paper.book().write(Sabit.KEY_EMAİL,email);
-                Paper.book().write(Sabit.KEY_SIFRE,sifre);
-            }
-        } catch (Exception e) {
-        }
+
 
     }
 
