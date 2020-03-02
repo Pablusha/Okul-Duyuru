@@ -44,6 +44,13 @@ dependencies {
     //SDP Library(Scalable dp)
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
 
+    //Paper Library
+    //Paper kütüphanesini Android için bazı nesneleri saklamak için kullanıyoruz.(Object Storage)
+    //Kütüphane NO-SQL'dir.
+    //NO-SQL dediğimiz veritabanları ise verilere erişmek,verileri yönetmek ve depolamak için kullanılan bir veritabanı şeklidir.
+    implementation 'io.paperdb:paperdb:2.6'
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
