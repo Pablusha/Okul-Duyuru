@@ -37,4 +37,5 @@
     <string name="duyuruEkle">Duyuru Ekle</string>
     <string name="duyuruGuncelle">Duyuru Güncelle</string>
     <string name="duyuruSil">Duyuru Sil</string>
+    <string name="beniHatirla">Beni Hatırla</string>
 </resources>
