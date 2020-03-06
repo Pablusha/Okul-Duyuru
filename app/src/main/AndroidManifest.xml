@@ -14,7 +14,6 @@
         <activity android:name=".activity_ogretmen_home"></activity>
         <activity android:name=".ArelWebView" />
         <activity android:name=".activity_ogretmen_register" />
-        <activity android:name=".activity_ogretmen_yeni_duyuru" />
         <activity android:name=".activity_ogretmen_login" />
         <activity android:name=".OgrenciDuyuruActivity" />
         <activity android:name=".HomeActivity" />
