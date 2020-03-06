@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 
 
@@ -27,6 +28,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.paket.okulduyuru.utils.Sabit;
+
+import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView txtAdSoyad;
@@ -43,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
         rlArelWeb = findViewById(R.id.ac_home_cv_arelweb);
         rlDuyurular = findViewById(R.id.ac_home_cv_duyurular);
         getAdSoyad();
-
+        Paper.init(this);
 
         //Duyurular sayfasına geçiş..
         rlDuyurular.setOnClickListener(new View.OnClickListener() {
@@ -62,6 +66,12 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        String KEY_EMAIL = Paper.book().read(Sabit.KEY_EMAIL);
+        String KEY_SIFRE = Paper.book().read(Sabit.KEY_SIFRE);
+
+
+
 
 
     }

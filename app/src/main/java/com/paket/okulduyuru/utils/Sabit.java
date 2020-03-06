@@ -1,7 +1,11 @@
 package com.paket.okulduyuru.utils;
 
+import com.paket.okulduyuru.Ogrenci;
+
 public class Sabit {
 
-  public static String KEY_EMAİL = "email";
-  public static String KEY_SIFRE = "sifre";
+  private static Ogrenci onlineOgrenci;
+
+  public static final String KEY_EMAIL = "email";
+  public static final String KEY_SIFRE = "sifre";
 }

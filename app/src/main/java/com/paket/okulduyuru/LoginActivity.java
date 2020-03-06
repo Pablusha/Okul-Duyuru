@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -16,6 +17,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.paket.okulduyuru.utils.PreferenceUtils;
+import com.paket.okulduyuru.utils.Sabit;
+
+import io.paperdb.Paper;
 
 
 public class LoginActivity extends AppCompatActivity {
@@ -23,6 +27,8 @@ public class LoginActivity extends AppCompatActivity {
     private EditText edSifre;
     private Button btnGiris,btnOgretmenGiris;
     private FirebaseAuth firebaseAuth;
+    private String parentDbName = "Ogrenci";
+    private CheckBox chkBeniHatirla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +39,20 @@ public class LoginActivity extends AppCompatActivity {
         edSifre = findViewById(R.id.edittext_password);
         btnGiris = findViewById(R.id.btnGiris);
         btnOgretmenGiris = findViewById(R.id.btnOgretmenGiris);
+        chkBeniHatirla = findViewById(R.id.ac_ogrenci_login_chk_beni_hatirla);
+        Paper.init(this);
 
         firebaseAuth = FirebaseAuth.getInstance();
+
+        try {
+            String email = edEmail.getText().toString();
+            String sifre = edSifre.getText().toString();
+            if (chkBeniHatirla.isChecked()) {
+                Paper.book().write(Sabit.KEY_EMAIL,email);
+                Paper.book().write(Sabit.KEY_SIFRE,sifre);
+            }
+        } catch (Exception e) {
+        }
 
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,15 +93,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-        try {
-            if (PreferenceUtils.getEmail(LoginActivity.this) != null || !PreferenceUtils.getEmail(LoginActivity.this).equals("")) {
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                startActivity(intent);
-            } else {
-                Toast.makeText(getApplicationContext(), PreferenceUtils.getEmail(LoginActivity.this), Toast.LENGTH_LONG).show();
-            }
-        } catch (Exception e) {
-        }
+
 
     }
 

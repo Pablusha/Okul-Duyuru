@@ -34,4 +34,11 @@
         Bilgisayar Programcılığı Bölüm başkanından bilgi alabilirsiniz.</string>
     <string name="bilgiMesajiKapat">KAPAT</string>
     <string name="anasayfa">Anasayfa</string>
+
+
+    <string name="duyuruEkle">Duyuru Ekle</string>
+    <string name="duyuruGuncelle">Duyuru Güncelle</string>
+    <string name="duyuruSil">Duyuru Sil</string>
+    <string name="beniHatirla">Beni Hatırla</string>
+
 </resources>
