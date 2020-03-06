@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity_ogretmen_home"></activity>
+        <activity android:name=".activitiy_ogretmen_duyuru_add"></activity>
+        <activity android:name=".activity_ogretmen_home" />
         <activity android:name=".ArelWebView" />
         <activity android:name=".activity_ogretmen_register" />
         <activity android:name=".activity_ogretmen_login" />
