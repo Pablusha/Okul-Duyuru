@@ -34,7 +34,7 @@ import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView txtAdSoyad;
-    private RelativeLayout rlDuyurular,rlArelWeb;
+    private RelativeLayout rlDuyurular,rlArelWeb,rlChat;
     private FirebaseUser user;
     private String uid;
 
@@ -46,6 +46,7 @@ public class HomeActivity extends AppCompatActivity {
         txtAdSoyad = findViewById(R.id.adSoyad);
         rlArelWeb = findViewById(R.id.ac_home_cv_arelweb);
         rlDuyurular = findViewById(R.id.ac_home_cv_duyurular);
+        rlChat = findViewById(R.id.ac_home_cv_message);
         getAdSoyad();
         Paper.init(this);
 
@@ -63,6 +64,15 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this,ArelWebView.class);
+                startActivity(intent);
+            }
+        });
+
+        //Mesajlaşma sayfasına geçiş.
+        rlChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this,ChatMainActivity.class);
                 startActivity(intent);
             }
         });
