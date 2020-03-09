@@ -1,9 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity_ogretmen_duyuru_add">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_add_welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="DUYURU YAYINLAMA PANELİ"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_add_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_170sdp">
+
+        <Spinner
+            android:id="@+id/ac_ogretmen_duyuru_add_spinner"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:background="@drawable/input_design"
+            android:hint="@string/duyuruBolum" />
+
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_add_title"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_add_spinner"
+            android:hint="Duyuru Başlığı:"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_add_context"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_add_title"
+            android:hint="Duyuru İçeriği:"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_add_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ac_ogretmen_duyuru_add_header">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Öğrencilere bildirim gönderilsin mi?"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <Button
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:text="DUYURU YAYINLA"
+            android:background="@color/inputColor" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
