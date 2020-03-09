@@ -18,4 +18,5 @@
     <color name="splashScreenBorderColor">#FF000000</color>
     <color name="ogretmenHomeBackground">#42568D</color>
     <color name="black">#000000</color>
+    <color name="inputColor">#D81B60</color>
 </resources>
