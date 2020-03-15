@@ -1,5 +1,6 @@
 package com.paket.okulduyuru;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -12,6 +13,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+
 
 public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
@@ -20,6 +30,8 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
     private CheckBox chk_duyuru_bildirim;
     private Button btn_duyuru_yayinla;
     private Spinner bolumler;
+    DatabaseReference databaseReference;
+    private String duyuruRandomKey,saveCurrentDate,saveCurrentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,32 +55,70 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         //Button
         btn_duyuru_yayinla = findViewById(R.id.ac_ogretmen_duyuru_add_btnYayinla);
 
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("Duyuru");
+
+
         btn_duyuru_yayinla.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                duyuruBilgileriniKontrolEt();
-
+                duyuruBilgileriniVeritabaninaKaydet();
             }
         });
 
     }
 
-    private void duyuruBilgileriniKontrolEt() {
+    private void duyuruBilgileriniVeritabaninaKaydet() {
         duyuru_context = ed_duyuru_icerik.getText().toString();
         duyuru_baslik = ed_duyuru_baslik.getText().toString();
         duyuru_bolum = bolumler.getSelectedItem().toString();
 
         if (TextUtils.isEmpty(duyuru_context)) {
             Toast.makeText(activity_ogretmen_duyuru_add.this, "Bir duyuru içeriği girmelisiniz.", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         if (TextUtils.isEmpty(duyuru_baslik)) {
             Toast.makeText(activity_ogretmen_duyuru_add.this,"Bir duyuru başlığı girmelisiniz.",Toast.LENGTH_LONG).show();
+            return;
         }
 
         if (duyuru_bolum == null) {
             Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuruyu hangi bölüme yayınlayacağınızı seçmelisiniz.",Toast.LENGTH_LONG).show();
+            return;
         }
 
+        Calendar calendar = Calendar.getInstance();
+
+        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+        saveCurrentDate = currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+        saveCurrentTime = currentTime.format(calendar.getTime());
+
+        duyuruRandomKey = saveCurrentDate + saveCurrentTime;
+
+        HashMap<String, Object> duyuruMap = new HashMap<>();
+        duyuruMap.put("pid",duyuruRandomKey);
+        duyuruMap.put("date",saveCurrentDate);
+        duyuruMap.put("time",saveCurrentTime);
+        duyuruMap.put("context",duyuru_context);
+        duyuruMap.put("title",duyuru_baslik);
+        duyuruMap.put("bolum",duyuru_bolum);
+
+        databaseReference.child(duyuruRandomKey).updateChildren(duyuruMap)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuru yayınlama işlemi başarılı.",Toast.LENGTH_LONG).show();
+                        }
+                        else {
+                            String message = task.getException().toString();
+                            Toast.makeText(activity_ogretmen_duyuru_add.this,"Error:" + message,Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
     }
+
 }
