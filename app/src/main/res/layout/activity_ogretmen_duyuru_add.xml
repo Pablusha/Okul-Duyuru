@@ -14,7 +14,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_40sdp"
-            android:text="DUYURU YAYINLAMA PANELİ"
+            android:text="@string/duyuruYayinlama"
             android:layout_centerHorizontal="true"
             android:textSize="@dimen/_20sdp"
             android:layout_marginTop="@dimen/_70sdp"
@@ -41,7 +41,7 @@
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_below="@id/ac_ogretmen_duyuru_add_spinner"
-            android:hint="Duyuru Başlığı:"
+            android:hint="@string/duyuruBaslik"
             android:background="@drawable/input_design"
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="20dp"
@@ -53,7 +53,7 @@
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_below="@id/ac_ogretmen_duyuru_add_title"
-            android:hint="Duyuru İçeriği:"
+            android:hint="@string/duyuruIcerik"
             android:background="@drawable/input_design"
             android:layout_marginTop="@dimen/_10sdp"
             android:padding="20dp"
@@ -69,18 +69,20 @@
         android:layout_below="@id/ac_ogretmen_duyuru_add_header">
 
         <CheckBox
+            android:id="@+id/ac_ogretmen_duyuru_add_checkbox_bildirim"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/_40sdp"
-            android:text="Öğrencilere bildirim gönderilsin mi?"
+            android:text="@string/duyuruBildirim"
             android:layout_marginStart="@dimen/_25sdp"
             android:layout_marginTop="@dimen/_10sdp" />
 
         <Button
+            android:id="@+id/ac_ogretmen_duyuru_add_btnYayinla"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_50sdp"
             android:layout_marginStart="@dimen/_30sdp"
             android:layout_marginTop="@dimen/_60sdp"
-            android:text="DUYURU YAYINLA"
+            android:text="@string/duyuruYayinla"
             android:background="@color/inputColor" />
 
     </RelativeLayout>

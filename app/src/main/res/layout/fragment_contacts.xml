@@ -9,7 +9,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contatcs Fragment"
+        android:text="Contacts Fragment"
         android:layout_centerInParent="true"
         android:textSize="@dimen/_26sdp"
         android:textStyle="bold"/>
