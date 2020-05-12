@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+
+import com.paket.okulduyuru.R;
 
 public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
 
@@ -22,7 +24,7 @@ public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
         rl_add_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_add.class));
+                startActivity(new Intent(getApplicationContext(), activity_ogretmen_duyuru_add.class));
             }
         });
     }

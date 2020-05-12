@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.paket.okulduyuru.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -118,6 +119,35 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                         }
                     }
                 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 

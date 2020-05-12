@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
+import com.paket.okulduyuru.R;
+import com.paket.okulduyuru.TabsAccessorAdapter;
 
 public class ChatMainActivity extends AppCompatActivity {
 

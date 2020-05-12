@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity_ogretmen_duyuru_add">
+    tools:context=".UI.activity_ogretmen_duyuru_add">
 
     <RelativeLayout
         android:id="@+id/ac_ogretmen_duyuru_add_welcome_text"

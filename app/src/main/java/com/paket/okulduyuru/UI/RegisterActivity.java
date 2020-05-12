@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +24,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.paket.okulduyuru.Model.Ogrenci;
+import com.paket.okulduyuru.R;
 
 public class RegisterActivity extends AppCompatActivity {
     private EditText edAdSoyad,edOgrenciNo,edSifre,edEMail,edSifreOnay;
@@ -130,7 +132,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         public void onComplete(@NonNull Task<Void> task) {
                                             Toast.makeText(RegisterActivity.this,
                                                     "Kayıt olma işlemi başarılı.",Toast.LENGTH_LONG).show();
-                                            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                                            startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                         }
                                     });
                                 } else {
