@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 
 import java.text.SimpleDateFormat;
@@ -32,6 +33,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
     private Button btn_duyuru_yayinla;
     private Spinner bolumler;
     DatabaseReference databaseReference;
+    Duyuru duyuru;
     private String duyuruRandomKey,saveCurrentDate,saveCurrentTime;
 
     @Override
