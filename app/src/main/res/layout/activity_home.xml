@@ -5,7 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     android:background="@color/ogrenciHomeBackground"
-    tools:context=".HomeActivity">
+    tools:context=".UI.HomeActivity">
 
     <RelativeLayout
         android:id="@+id/ac_home_rl_title"

@@ -14,7 +14,7 @@
       xmlns:tools="http://schemas.android.com/tools"
       android:layout_width="match_parent"
       android:layout_height="match_parent"
-      tools:context=".OgrenciDuyuruActivity"
+      tools:context=".UI.OgrenciDuyuruActivity"
       android:background="@color/backgroundDuyurular">
 
     <include layout="@layout/toolbar">

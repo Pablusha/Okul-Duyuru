@@ -1,6 +1,6 @@
 package com.paket.okulduyuru.utils;
 
-import com.paket.okulduyuru.Ogrenci;
+import com.paket.okulduyuru.Model.Ogrenci;
 
 public class Sabit {
 

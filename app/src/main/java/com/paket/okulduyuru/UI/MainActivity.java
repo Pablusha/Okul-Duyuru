@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+
+import com.paket.okulduyuru.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -31,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     new Handler().postDelayed(new Runnable() {
       @Override
       public void run() {
-        Intent gecis = new Intent(MainActivity.this,LoginActivity.class); //Intent aktiviteler arasında geçiş yapmamızı sağlar.
+        Intent gecis = new Intent(MainActivity.this, LoginActivity.class); //Intent aktiviteler arasında geçiş yapmamızı sağlar.
         startActivity(gecis);
         finish();
       }

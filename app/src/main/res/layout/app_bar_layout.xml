@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Toolbar
+<Toolbar xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/main_app_bar"
     android:background="@color/colorLogin"
     android:subtitleTextAppearance="@dimen/_40sdp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    >
 
 </Toolbar>

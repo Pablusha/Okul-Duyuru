@@ -1,15 +1,24 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.Model;
 
-public class Ogretmen {
+public class Ogrenci {
 
-    private String ad_soyad,email,sifre,bolum;
-
-    //Constructor
-    public Ogretmen(String ad_soyad,String email,String sifre,String bolum) {
+    public Ogrenci(String ogrenci_no,String ad_soyad,String email,String sifre,String bolum) {
+        this.ogrenci_no = ogrenci_no;
         this.ad_soyad = ad_soyad;
         this.email = email;
         this.sifre = sifre;
         this.bolum = bolum;
+    }
+
+    public Ogrenci() {
+    }
+
+    public String getOgrenci_no() {
+        return ogrenci_no;
+    }
+
+    public void setOgrenci_no(String ogrenci_no) {
+        this.ogrenci_no = ogrenci_no;
     }
 
     public String getAd_soyad() {
@@ -36,11 +45,17 @@ public class Ogretmen {
         this.sifre = sifre;
     }
 
-    public String getBolum() {
+    public String getBolumler() {
         return bolum;
     }
 
-    public void setBolum(String bolum) {
-        this.bolum = bolum;
+    public void setBolumler(String bolumler) {
+        this.bolum = bolumler;
     }
+
+    private String ogrenci_no,ad_soyad,email,sifre,bolum;
+
+
+
+
 }

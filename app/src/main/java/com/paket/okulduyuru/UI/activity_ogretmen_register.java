@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +24,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.paket.okulduyuru.Model.Ogretmen;
+import com.paket.okulduyuru.R;
 
 public class activity_ogretmen_register extends AppCompatActivity {
 
@@ -106,7 +108,7 @@ public class activity_ogretmen_register extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                           Toast.makeText(activity_ogretmen_register.this,"Kayıt olma işlemi başarılı.",Toast.LENGTH_LONG).show();
-                          startActivity(new Intent(getApplicationContext(),activity_ogretmen_login.class));
+                          startActivity(new Intent(getApplicationContext(), activity_ogretmen_login.class));
                         }
                       });
 
