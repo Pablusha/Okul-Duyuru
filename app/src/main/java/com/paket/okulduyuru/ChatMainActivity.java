@@ -1,6 +1,6 @@
 package com.paket.okulduyuru;
 
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
