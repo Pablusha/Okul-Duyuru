@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@color/colorLogin"
-    tools:context=".activity_ogretmen_register">
+    tools:context=".UI.activity_ogretmen_register">
 
     <LinearLayout
         android:layout_width="wrap_content"

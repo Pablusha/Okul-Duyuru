@@ -34,15 +34,19 @@
         Bilgisayar Programcılığı Bölüm başkanından bilgi alabilirsiniz.</string>
     <string name="bilgiMesajiKapat">KAPAT</string>
     <string name="anasayfa">Anasayfa</string>
-
-
     <string name="duyuruEkle">Duyuru Ekle</string>
     <string name="duyuruGuncelle">Duyuru Güncelle</string>
     <string name="duyuruSil">Duyuru Sil</string>
     <string name="beniHatirla">Beni Hatırla</string>
     <string name="duyuruBolum">Bölüm seçiniz:</string>
+    <string name="duyuruYayinlama">Duyuru Yayınlama Paneli</string>
+    <string name="duyuruBaslik">Duyuru Başlığı:</string>
+    <string name="duyuruIcerik">Duyuru İçeriği:</string>
+    <string name="duyuruBildirim">Öğrencilere duyurunuzun bildirimi gönderilsin mi?</string>
+    <string name="duyuruYayinla">DUYURU YAYINLA</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
 
 </resources>

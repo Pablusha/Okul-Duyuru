@@ -1,25 +1,16 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
-
-
-import android.webkit.WebChromeClient;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 
 
 import android.widget.RelativeLayout;
 
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -28,6 +19,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.utils.Sabit;
 
 import io.paperdb.Paper;
@@ -54,7 +46,7 @@ public class HomeActivity extends AppCompatActivity {
         rlDuyurular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,OgrenciDuyuruActivity.class);
+                Intent intent = new Intent(HomeActivity.this, OgrenciDuyuruActivity.class);
                 startActivity(intent);
             }
         });
@@ -63,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         rlArelWeb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,ArelWebView.class);
+                Intent intent = new Intent(HomeActivity.this, ArelWebView.class);
                 startActivity(intent);
             }
         });
@@ -72,7 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         rlChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this,ChatMainActivity.class);
+                Intent intent = new Intent(HomeActivity.this, ChatMainActivity.class);
                 startActivity(intent);
             }
         });

@@ -1,4 +1,4 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.paket.okulduyuru.R;
 
 public class activity_ogretmen_home extends AppCompatActivity {
 
@@ -38,7 +39,7 @@ public class activity_ogretmen_home extends AppCompatActivity {
         rl_duyuru_yonetim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
+                startActivity(new Intent(getApplicationContext(), activity_ogretmen_duyuru_yonetim.class));
             }
         });
 

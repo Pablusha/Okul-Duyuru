@@ -16,6 +16,7 @@
       <w>arka</w>
       <w>ayrı</w>
       <w>aşağıya</w>
+      <w>baslik</w>
       <w>bazı</w>
       <w>başarılı</w>
       <w>başkanından</w>
@@ -26,8 +27,10 @@
       <w>benim</w>
       <w>benzeri</w>
       <w>bildirim</w>
+      <w>bildirimi</w>
       <w>bilgi</w>
       <w>bilgilendirme</w>
+      <w>bilgilerini</w>
       <w>bilgisayar</w>
       <w>bolum</w>
       <w>bolumler</w>
@@ -36,6 +39,7 @@
       <w>burada</w>
       <w>buttonstyle</w>
       <w>bölüm</w>
+      <w>bölüme</w>
       <w>bölümünüzü</w>
       <w>bütün</w>
       <w>bırakılamaz</w>
@@ -61,6 +65,8 @@
       <w>doğru</w>
       <w>duyuru</w>
       <w>duyuruları</w>
+      <w>duyurunuzun</w>
+      <w>duyuruyu</w>
       <w>döndürülecek</w>
       <w>edittext</w>
       <w>editör</w>
@@ -84,6 +90,7 @@
       <w>gerçekleşir</w>
       <w>gerçekleştirmemizi</w>
       <w>geçiş</w>
+      <w>girilmelidir</w>
       <w>giriniz</w>
       <w>giris</w>
       <w>giriş</w>
@@ -91,12 +98,14 @@
       <w>girmelisiniz</w>
       <w>gi̇ri̇ş</w>
       <w>goster</w>
+      <w>guncelle</w>
       <w>gönderdiğimiz</w>
       <w>gönderilsin</w>
       <w>göre</w>
       <w>gözükmeyecekti</w>
       <w>güncelle</w>
       <w>hakkında</w>
+      <w>hangi</w>
       <w>hatirla</w>
       <w>hatırla</w>
       <w>hesaba</w>
@@ -104,7 +113,9 @@
       <w>hesap</w>
       <w>hosgeldin</w>
       <w>hoşgeldin</w>
+      <w>icerik</w>
       <w>istediğimiz</w>
+      <w>içeriği</w>
       <w>için</w>
       <w>içinde</w>
       <w>içindeki</w>
@@ -114,11 +125,13 @@
       <w>kadar</w>
       <w>kapat</w>
       <w>kaplar</w>
+      <w>kaydet</w>
       <w>kayit</w>
       <w>kayitli</w>
       <w>kayıt</w>
       <w>kayıtlı</w>
       <w>kendi</w>
+      <w>kontrol</w>
       <w>konumlandırabiliriz</w>
       <w>konumlandırmamıza</w>
       <w>kullanacağımı</w>
@@ -130,12 +143,14 @@
       <w>kütüphane</w>
       <w>kütüphanesini</w>
       <w>kısmı</w>
+      <w>listele</w>
       <w>lütfen</w>
       <w>menü</w>
       <w>mesaji</w>
       <w>mesajlasma</w>
       <w>mesajlaşma</w>
       <w>mesajı</w>
+      <w>mevcut</w>
       <w>misin</w>
       <w>misiniz</w>
       <w>mühendisliği</w>
@@ -163,6 +178,7 @@
       <w>ortalar</w>
       <w>ozellikler</w>
       <w>paket</w>
+      <w>paneli</w>
       <w>paneli̇</w>
       <w>planda</w>
       <w>posta</w>
@@ -174,6 +190,7 @@
       <w>resoource</w>
       <w>sabit</w>
       <w>sahip</w>
+      <w>sakla</w>
       <w>sakladığımız</w>
       <w>saklamak</w>
       <w>saniye</w>
@@ -184,7 +201,9 @@
       <w>sağlayan</w>
       <w>sağlıyor</w>
       <w>seti</w>
+      <w>seçilmeli</w>
       <w>seçiniz</w>
+      <w>seçmelisiniz</w>
       <w>sifre</w>
       <w>sistemi</w>
       <w>soyad</w>
@@ -193,6 +212,7 @@
       <w>sınıfı</w>
       <w>sırasıyla</w>
       <w>tanımlıyorum</w>
+      <w>tarih</w>
       <w>tekrarlanmasını</w>
       <w>tutabiliyoruz</w>
       <w>tuttuğum</w>
@@ -202,6 +222,7 @@
       <w>vardır</w>
       <w>verilere</w>
       <w>verileri</w>
+      <w>veritabanina</w>
       <w>veritabanları</w>
       <w>veritabanı</w>
       <w>vermeyecekti</w>
@@ -210,10 +231,15 @@
       <w>yanlış</w>
       <w>yapmak</w>
       <w>yapmamızı</w>
+      <w>yapılacak</w>
       <w>yarıyor</w>
       <w>yatay</w>
       <w>yayinla</w>
       <w>yayinlama</w>
+      <w>yayınlama</w>
+      <w>yayınlandı</w>
+      <w>yayınlayacağınızı</w>
+      <w>yazar</w>
       <w>yazmasaydım</w>
       <w>yazılım</w>
       <w>yeni</w>
@@ -221,6 +247,7 @@
       <w>yukarıdan</w>
       <w>yönde</w>
       <w>yönetmek</w>
+      <w>zaman</w>
       <w>zaten</w>
       <w>çalışan</w>
       <w>çember</w>
@@ -230,6 +257,7 @@
       <w>öğrencilere</w>
       <w>öğretmen</w>
       <w>üzerinde</w>
+      <w>şekilde</w>
       <w>şeklidir</w>
       <w>şifre</w>
       <w>şifreleriniz</w>
