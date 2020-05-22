@@ -44,6 +44,7 @@
     <string name="duyuruIcerik">Duyuru İçeriği:</string>
     <string name="duyuruBildirim">Öğrencilere duyurunuzun bildirimi gönderilsin mi?</string>
     <string name="duyuruYayinla">DUYURU YAYINLA</string>
+    <string name="author">Yazar:</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

@@ -3,6 +3,7 @@ package com.paket.okulduyuru.UI;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -27,8 +28,8 @@ import java.util.HashMap;
 
 public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
-    private String duyuru_context,duyuru_baslik,duyuru_bolum;
-    private EditText ed_duyuru_baslik,ed_duyuru_icerik;
+    private String duyuru_context,duyuru_baslik,duyuru_bolum,duyuru_yazar;
+    private EditText ed_duyuru_baslik,ed_duyuru_icerik,ed_duyuru_yazar;
     private CheckBox chk_duyuru_bildirim;
     private Button btn_duyuru_yayinla;
     private Spinner bolumler;
@@ -53,6 +54,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         //Casting Views
         ed_duyuru_baslik = findViewById(R.id.ac_ogretmen_duyuru_add_title);
         ed_duyuru_icerik = findViewById(R.id.ac_ogretmen_duyuru_add_context);
+        ed_duyuru_yazar = findViewById(R.id.ac_ogretmen_duyuru_add_author);
         //Checkbox
         chk_duyuru_bildirim = findViewById(R.id.ac_ogretmen_duyuru_add_checkbox_bildirim);
         //Button
@@ -74,6 +76,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         duyuru_context = ed_duyuru_icerik.getText().toString();
         duyuru_baslik = ed_duyuru_baslik.getText().toString();
         duyuru_bolum = bolumler.getSelectedItem().toString();
+        duyuru_yazar = ed_duyuru_yazar.getText().toString();
 
         if (TextUtils.isEmpty(duyuru_context)) {
             Toast.makeText(activity_ogretmen_duyuru_add.this, "Bir duyuru içeriği girmelisiniz.", Toast.LENGTH_SHORT).show();
@@ -82,6 +85,11 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
         if (TextUtils.isEmpty(duyuru_baslik)) {
             Toast.makeText(activity_ogretmen_duyuru_add.this,"Bir duyuru başlığı girmelisiniz.",Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        if (TextUtils.isEmpty(duyuru_yazar)) {
+            Toast.makeText(activity_ogretmen_duyuru_add.this,"Yayınlayan kişiyi belirtmeniz gerekiyor.",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -95,7 +103,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
         saveCurrentDate = currentDate.format(calendar.getTime());
 
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm");
         saveCurrentTime = currentTime.format(calendar.getTime());
 
         duyuruRandomKey = saveCurrentDate + saveCurrentTime;
@@ -107,6 +115,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         duyuruMap.put("context",duyuru_context);
         duyuruMap.put("title",duyuru_baslik);
         duyuruMap.put("bolum",duyuru_bolum);
+        duyuruMap.put("yazar",duyuru_yazar);
 
         databaseReference.child(duyuruRandomKey).updateChildren(duyuruMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -114,6 +123,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuru yayınlama işlemi başarılı.",Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
                         }
                         else {
                             String message = task.getException().toString();
@@ -121,35 +131,6 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                         }
                     }
                 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     }
 

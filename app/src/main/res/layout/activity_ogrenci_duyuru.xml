@@ -17,9 +17,21 @@
       tools:context=".UI.OgrenciDuyuruActivity"
       android:background="@color/backgroundDuyurular">
 
-    <include layout="@layout/toolbar">
+
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/ac_duyuru_toolbar">
+
 
     </include>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:layout_below="@id/ac_duyuru_toolbar"
+        />
 
   </RelativeLayout>
 

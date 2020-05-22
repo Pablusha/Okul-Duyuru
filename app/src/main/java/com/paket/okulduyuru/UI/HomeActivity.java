@@ -26,7 +26,7 @@ import io.paperdb.Paper;
 
 public class HomeActivity extends AppCompatActivity {
     private TextView txtAdSoyad;
-    private RelativeLayout rlDuyurular,rlArelWeb,rlChat;
+    private RelativeLayout rlDuyurular,rlArelWeb,rlChat,rlEtkinlikler;
     private FirebaseUser user;
     private String uid;
 
@@ -36,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         txtAdSoyad = findViewById(R.id.adSoyad);
+        rlEtkinlikler = findViewById(R.id.ac_home_cv_etkinlikler);
         rlArelWeb = findViewById(R.id.ac_home_cv_arelweb);
         rlDuyurular = findViewById(R.id.ac_home_cv_duyurular);
         rlChat = findViewById(R.id.ac_home_cv_message);
@@ -68,6 +69,16 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        rlEtkinlikler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, EtkinlikActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
 
         String KEY_EMAIL = Paper.book().read(Sabit.KEY_EMAIL);
         String KEY_SIFRE = Paper.book().read(Sabit.KEY_SIFRE);

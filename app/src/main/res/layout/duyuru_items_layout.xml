@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             android:text="Duyuru Başlığı"
             android:textAlignment="textStart"
-            android:textSize="@dimen/_20sdp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="normal"
-            android:textColor="@color/colorPrimaryDark" />
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/ac_cv_duyuru_context"
@@ -30,7 +30,17 @@
             android:layout_height="@dimen/_100sdp"
             android:layout_below="@+id/ac_cv_duyuru_baslik"
             android:scaleType="centerCrop"
-            android:layout_marginTop="@dimen/_2sdp" />
+            android:layout_marginTop="@dimen/_4sdp" />
+
+        <TextView
+            android:id="@+id/ac_cv_duyuru_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textAlignment="textEnd"
+            android:textSize="@dimen/_15sdp"
+            android:textStyle="normal"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/ac_cv_duyuru_yazar"
@@ -53,9 +63,6 @@
             android:textSize="@dimen/_16sdp"
             android:textStyle="normal"
             android:textColor="@color/black" />
-
-
-
 
     </RelativeLayout>
 

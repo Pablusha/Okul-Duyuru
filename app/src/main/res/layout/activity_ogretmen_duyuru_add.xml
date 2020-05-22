@@ -60,6 +60,19 @@
             android:inputType="textMultiLine"
             android:layout_marginStart="@dimen/_30sdp" />
 
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_add_author"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_add_context"
+            android:hint="@string/author"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+
     </RelativeLayout>
 
     <RelativeLayout
