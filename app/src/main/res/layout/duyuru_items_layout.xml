@@ -18,7 +18,7 @@
             android:id="@+id/ac_cv_duyuru_baslik"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Duyuru Başlığı"
+            android:text="@string/recycler_item_baslik"
             android:textAlignment="textStart"
             android:textSize="@dimen/_15sdp"
             android:textStyle="normal"
@@ -36,7 +36,7 @@
             android:id="@+id/ac_cv_duyuru_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date"
+            android:text="@string/recycler_item_date"
             android:textAlignment="textEnd"
             android:textSize="@dimen/_15sdp"
             android:textStyle="normal"
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ac_cv_duyuru_context"
-            android:text="Yazar"
+            android:text="@string/recycler_item_yazar"
             android:textAlignment="textStart"
             android:textSize="@dimen/_16sdp"
             android:textStyle="normal"
@@ -58,15 +58,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/ac_cv_duyuru_context"
-            android:text="Time"
+            android:text="@string/recycler_item_time"
             android:textAlignment="textEnd"
             android:textSize="@dimen/_16sdp"
             android:textStyle="normal"
             android:textColor="@color/black" />
 
     </RelativeLayout>
-
-
-
 
 </androidx.cardview.widget.CardView>
