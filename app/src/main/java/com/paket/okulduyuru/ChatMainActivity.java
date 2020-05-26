@@ -1,4 +1,5 @@
-package com.paket.okulduyuru.UI;
+package com.paket.okulduyuru;
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,14 +8,15 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.tabs.TabLayout;
-import com.paket.okulduyuru.R;
-import com.paket.okulduyuru.TabsAccessorAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.paket.okulduyuru.UI.LoginActivity;
 
 public class ChatMainActivity extends AppCompatActivity {
 
@@ -22,7 +24,9 @@ public class ChatMainActivity extends AppCompatActivity {
     private ViewPager myViewPager;
     private TabLayout myTabLayout;
     private TabsAccessorAdapter myTabsAccessorAdapter;
-    private FirebaseAuth firebaseAuth;
+
+    public FirebaseAuth firebaseAuth;
+    public FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +34,12 @@ public class ChatMainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_main);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        currentUser = firebaseAuth.getCurrentUser();
 
         mToolbar = findViewById(R.id.main_page_toolbar);
         mToolbar.setSubtitle("Mesajlaşma");
 
+        mToolbar.inflateMenu(R.menu.options_menu);
 
         myViewPager = (ViewPager) findViewById(R.id.main_tabs_pager);
         myTabsAccessorAdapter = new TabsAccessorAdapter(getSupportFragmentManager());
@@ -46,8 +52,19 @@ public class ChatMainActivity extends AppCompatActivity {
 
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
+    protected void onStart() {
+        super.onStart();
+
+        if(currentUser == null)
+        {
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+
         super.onCreateOptionsMenu(menu);
 
         getMenuInflater().inflate(R.menu.options_menu, menu);
@@ -55,17 +72,17 @@ public class ChatMainActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
         super.onOptionsItemSelected(item);
 
-        if(item.getItemId() == R.id.main_logout_option)
+        if((item.getItemId()) == R.id.main_logout_option)
         {
             firebaseAuth.signOut();
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            Intent intent = new Intent(ChatMainActivity.this, LoginActivity.class);
             startActivity(intent);
+            finish();
 
         }
         if(item.getItemId() == R.id.main_settings_option)
