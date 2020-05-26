@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -20,7 +23,11 @@ import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.RecyclerView.RecyclerAdapter;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+
+import static com.paket.okulduyuru.UI.activity_ogretmen_duyuru_add.duyuruRandomKey;
 
 public class OgrenciDuyuruActivity extends AppCompatActivity {
 
@@ -31,6 +38,8 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
   ArrayList<Duyuru> duyurular;
   RecyclerAdapter recyclerAdapter;
   Context context;
+  FirebaseUser user;
+  String uid;
 
 
   @Override
@@ -45,6 +54,7 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
     duyuruRef.keepSynced(true);
     duyurular = new ArrayList<>();
 
+    bolumKontrol();
     getDataFromFirebase();
 
     setUpToolbar();
@@ -77,6 +87,35 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+
+    public void bolumKontrol() {
+        DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+        DatabaseReference ogrenciRef = rootRef.child("Ogrenci");
+        DatabaseReference duyuruRef = rootRef.child("Duyuru");
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        uid = user.getUid();
+
+        ValueEventListener eventListener = new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot ds: dataSnapshot.getChildren()) {
+                    String bolum = dataSnapshot.child(uid).child("bolumler").getValue(String.class);
+                    String duyuruBolum = dataSnapshot.child("May 22, 202002:01:27 AM").child("bolum").getValue(String.class);
+                    Toast.makeText(OgrenciDuyuruActivity.this,duyuruBolum + bolum,Toast.LENGTH_LONG).show();
+
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        };
+        duyuruRef.addValueEventListener(eventListener);
+        ogrenciRef.addValueEventListener(eventListener);
 
     }
 

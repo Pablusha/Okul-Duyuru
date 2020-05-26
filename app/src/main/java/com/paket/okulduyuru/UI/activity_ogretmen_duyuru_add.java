@@ -35,7 +35,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
     private Spinner bolumler;
     DatabaseReference databaseReference;
     Duyuru duyuru;
-    private String duyuruRandomKey,saveCurrentDate,saveCurrentTime;
+    public static String duyuruRandomKey,saveCurrentDate,saveCurrentTime;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
