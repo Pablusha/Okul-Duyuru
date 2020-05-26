@@ -1,10 +1,12 @@
-package com.paket.okulduyuru;
+package com.paket.okulduyuru.UI;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+
+import com.paket.okulduyuru.R;
 
 public class EtkinlikActivity extends AppCompatActivity {
 
@@ -15,7 +17,7 @@ public class EtkinlikActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_etkinlik);
 
-        webView=(WebView)findViewById(R.id.webView);
+        webView=(WebView)findViewById(R.id.ac_etkinlik_webView);
 
         webView.getSettings().setJavaScriptEnabled(true);
         webView.setWebViewClient(new WebViewClient());

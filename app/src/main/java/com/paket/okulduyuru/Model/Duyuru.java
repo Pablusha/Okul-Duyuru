@@ -2,17 +2,26 @@ package com.paket.okulduyuru.Model;
 
 public class Duyuru {
 
-    public String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime;
+    private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate;
 
     public Duyuru() {
 
     }
 
-    public Duyuru(String duyuruBaslik, String duyuruContext, String duyuruYazar, String duyuruTime) {
+    public String getDuyuruDate() {
+        return duyuruDate;
+    }
+
+    public void setDuyuruDate(String duyuruDate) {
+        this.duyuruDate = duyuruDate;
+    }
+
+    public Duyuru(String duyuruBaslik, String duyuruContext, String duyuruYazar, String duyuruTime, String duyuruDate) {
         this.duyuruBaslik = duyuruBaslik;
         this.duyuruContext = duyuruContext;
         this.duyuruYazar = duyuruYazar;
         this.duyuruTime = duyuruTime;
+        this.duyuruDate = duyuruDate;
     }
 
     public String getDuyuruBaslik() {
