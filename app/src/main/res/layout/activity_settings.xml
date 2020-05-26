@@ -25,7 +25,31 @@
         android:inputType="textMultiLine"
         android:hint="Kullanıcı Adı"
         android:textAlignment="center"
-        android:drawableStart="@drawable/edit_profile"/>
+        android:drawableStart="@drawable/edit_profile"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:background="@drawable/inputs"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:padding="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
+
+    <EditText
+        android:id="@+id/set_profile_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_user_name"
+        android:inputType="textMultiLine"
+        android:hint="Ben de Öğretmen Duyuru Sistemini Kullanıyorum!"
+        android:textAlignment="center"
+        android:drawableStart="@drawable/edit_status"
+        android:textColor="@color/colorPrimaryDark"
+        android:textStyle="bold"
+        android:background="@drawable/inputs"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:padding="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_10sdp"/>
 
 
 </RelativeLayout>
