@@ -11,7 +11,7 @@ import com.paket.okulduyuru.R;
 
 public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
 
-    private RelativeLayout rl_add_button;
+    private RelativeLayout rl_add_button,rl_delete_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,8 @@ public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
         setContentView(R.layout.activity_ogretmen_duyuru_yonetim);
 
         rl_add_button = findViewById(R.id.ac_ogretmen_duyuru_add);
+        rl_delete_button = findViewById(R.id.ac_ogretmen_duyuru_delete);
+
 
         //Duyuru ekleme aktivitesine geçiş.
         rl_add_button.setOnClickListener(new View.OnClickListener() {
@@ -27,5 +29,15 @@ public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), activity_ogretmen_duyuru_add.class));
             }
         });
+
+        rl_delete_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), activity_ogretmen_duyuru_delete.class));
+            }
+        });
+
+
+
     }
 }

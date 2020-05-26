@@ -17,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".UI.EtkinlikActivity"></activity>
+        <activity android:name=".UI.activity_ogretmen_duyuru_delete"></activity>
+        <activity android:name=".UI.EtkinlikActivity" />
         <activity android:name=".UI.ChatMainActivity" />
         <activity android:name=".UI.activity_ogretmen_duyuru_add" />
         <activity android:name=".UI.activity_ogretmen_duyuru_yonetim" />
