@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/set_user_name"
         android:inputType="textMultiLine"
-        android:hint="Ben de Öğretmen Duyuru Sistemini Kullanıyorum!"
+        android:hint="Ben de 'Öğretmen Duyuru Sistemi'ni kullanıyorum!"
         android:textAlignment="center"
         android:drawableStart="@drawable/edit_status"
         android:textColor="@color/colorPrimaryDark"
@@ -50,6 +50,24 @@
         android:layout_marginEnd="@dimen/_15sdp"
         android:padding="@dimen/_6sdp"
         android:layout_marginTop="@dimen/_10sdp"/>
+
+    <Button
+        android:id="@+id/update_settings_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/set_profile_status"
+        android:inputType="textMultiLine"
+        android:text="Güncelle"
+        android:textAlignment="center"
+        android:textColor="@color/colorWhite"
+        android:textStyle="bold"
+        android:background="@color/colorButton"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:padding="@dimen/_6sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_18sdp"/>
 
 
 </RelativeLayout>

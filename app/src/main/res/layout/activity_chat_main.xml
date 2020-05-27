@@ -12,13 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/main_page_toolbar"
-            layout="@layout/app_bar_layout"
-            >
-
-        </include>
-
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/main_tabs"
@@ -35,8 +28,7 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/main_tabs_pager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/appBarLayout">
+        android:layout_height="wrap_content">
 
     </androidx.viewpager.widget.ViewPager>
 

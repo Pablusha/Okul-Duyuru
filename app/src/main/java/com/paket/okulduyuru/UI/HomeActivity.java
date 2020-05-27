@@ -70,7 +70,7 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        //Etkinlik sayfasına geçiş.
         rlEtkinlikler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
