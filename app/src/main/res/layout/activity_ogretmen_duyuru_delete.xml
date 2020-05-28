@@ -6,8 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/drawerLayout"
-    >
+    android:id="@+id/drawerLayout" >
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -20,7 +19,6 @@
         <include layout="@layout/toolbar"
             android:id="@+id/ac_duyuru_toolbar">
 
-
         </include>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -32,6 +30,5 @@
             />
 
     </RelativeLayout>
-
 
 </androidx.drawerlayout.widget.DrawerLayout>
