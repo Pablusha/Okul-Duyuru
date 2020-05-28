@@ -63,4 +63,10 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
         }
     }
 
+    public void removeAt(int position) {
+        duyuruArrayList.remove(position);
+        notifyItemRemoved(position);
+        notifyItemRangeChanged(position,duyuruArrayList.size());
+    }
+
 }
