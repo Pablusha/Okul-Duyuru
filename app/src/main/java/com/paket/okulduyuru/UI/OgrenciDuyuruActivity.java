@@ -55,7 +55,6 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
     duyuruRef.keepSynced(true);
     duyurular = new ArrayList<>();
 
-    bolumKontrol();
     getDataFromFirebase();
 
     setUpToolbar();
