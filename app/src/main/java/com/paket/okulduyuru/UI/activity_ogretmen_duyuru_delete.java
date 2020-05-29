@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -65,6 +66,10 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
                 int position = target.getAdapterPosition();
                 duyurular.remove(position);
                 recyclerAdapter.notifyDataSetChanged();
+                Duyuru duyuru = new Duyuru();
+                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
+                DatabaseReference duyuruRef = rootRef.child("Duyuru");
+                duyuruRef.child(duyuru.getPid()).removeValue();
 
             }
         });
