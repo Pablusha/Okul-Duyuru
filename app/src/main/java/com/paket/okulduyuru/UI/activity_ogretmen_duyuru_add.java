@@ -16,14 +16,19 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Iterator;
 
 
 public class activity_ogretmen_duyuru_add extends AppCompatActivity {
@@ -67,6 +72,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 duyuruBilgileriniVeritabaninaKaydet();
+
             }
         });
 
@@ -108,7 +114,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
         duyuruRandomKey = saveCurrentDate + saveCurrentTime;
 
-        HashMap<String, Object> duyuruMap = new HashMap<>();
+        final HashMap<String, Object> duyuruMap = new HashMap<>();
         duyuruMap.put("pid",duyuruRandomKey);
         duyuruMap.put("date",saveCurrentDate);
         duyuruMap.put("time",saveCurrentTime);
@@ -122,8 +128,11 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
+                            String pid = (String) duyuruMap.get("pid");
+                            duyuru.setPid(pid);
                             Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuru yayınlama işlemi başarılı.",Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
+
                         }
                         else {
                             String message = task.getException().toString();
@@ -131,6 +140,8 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                         }
                     }
                 });
+
+
 
     }
 
