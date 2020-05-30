@@ -52,9 +52,10 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true">
 
+
         <EditText
             android:id="@+id/input_group_message"
-            android:layout_width="360dp"
+            android:layout_width="310dp"
             android:layout_height="wrap_content"
             android:hint="Bir şeyler yazın"
             android:padding="17dp"/>
@@ -64,6 +65,8 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:src="@drawable/send_message"/>
+
+
 
     </LinearLayout>
 
