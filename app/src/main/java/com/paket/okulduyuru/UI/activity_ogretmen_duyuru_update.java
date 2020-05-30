@@ -2,16 +2,13 @@ package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -23,11 +20,12 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
+import com.paket.okulduyuru.RecyclerView.DuyuruViewHolder;
 import com.paket.okulduyuru.RecyclerView.RecyclerAdapter;
 
 import java.util.ArrayList;
 
-public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
+public class activity_ogretmen_duyuru_update extends AppCompatActivity {
 
     private Toolbar toolbar;
     public DatabaseReference duyuruRef;
@@ -42,10 +40,11 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ogretmen_duyuru_delete);
+        setContentView(R.layout.activity_ogretmen_duyuru_update);
 
-        recyclerView = findViewById(R.id.recyclerDelete);
+        recyclerView = findViewById(R.id.recyclerUpdate);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         duyuruRef = FirebaseDatabase.getInstance().getReference();
         duyuruRef.keepSynced(true);
@@ -54,26 +53,13 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
 
         getDataFromFirebase();
         setUpToolbar();
+    }
 
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
-                return false;
-            }
 
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder target, int i) {
-                Duyuru duyuru = new Duyuru();
-                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                DatabaseReference duyuruRef = rootRef.child("Duyuru");
-                String pid = duyuru.getPid();
-                int position = target.getAdapterPosition();
-                duyuruRef.child(pid).removeValue();
-                duyurular.remove(position);
-                recyclerAdapter.notifyDataSetChanged();
-            }
-        });
-        helper.attachToRecyclerView(recyclerView);
+
+    private void setUpToolbar() {
+        toolbar = findViewById(R.id.ac_duyuru_toolbar);
+        toolbar.setSubtitle("Yayınlanan Duyurular");
     }
 
     private void getDataFromFirebase() {
@@ -102,12 +88,5 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
             }
         });
     }
-
-
-    private void setUpToolbar() {
-        toolbar = findViewById(R.id.ac_duyuru_toolbar);
-        toolbar.setSubtitle("Yayınlanan Duyurular");
-    }
-
 
 }

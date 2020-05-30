@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UI.activity_duyuru_update_screen">
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_update_welcome_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/duyuruUpdate"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_update_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_170sdp">
+
+        <Spinner
+            android:id="@+id/ac_ogretmen_duyuru_update_spinner"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:background="@drawable/input_design"
+            android:hint="@string/duyuruBolum" />
+
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_update_title"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_update_spinner"
+            android:hint="@string/duyuruBaslik"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_update_context"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_update_title"
+            android:hint="@string/duyuruIcerik"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+        <EditText
+            android:id="@+id/ac_ogretmen_duyuru_update_author"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/ac_ogretmen_duyuru_update_context"
+            android:hint="@string/author"
+            android:background="@drawable/input_design"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:padding="20dp"
+            android:inputType="textMultiLine"
+            android:layout_marginStart="@dimen/_30sdp" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ac_ogretmen_duyuru_update_footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ac_ogretmen_duyuru_update_header">
+
+        <CheckBox
+            android:id="@+id/ac_ogretmen_duyuru_update_checkbox_bildirim"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/duyuruBildirim"
+            android:layout_marginStart="@dimen/_25sdp"
+            android:layout_marginTop="@dimen/_10sdp" />
+
+        <Button
+            android:id="@+id/ac_ogretmen_duyuru_update_btnGuncelle"
+            android:layout_width="@dimen/_250sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginStart="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_60sdp"
+            android:text="@string/guncelleButton"
+            android:background="@color/inputColor" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -49,6 +49,8 @@
     <string name="recycler_item_date">Date</string>
     <string name="recycler_item_yazar">Yazar</string>
     <string name="recycler_item_time">Time</string>
+    <string name="duyuruUpdate">DUYURU GÜNCELLEME PANELİ</string>
+    <string name="guncelleButton">Duyuruyu Güncelle</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->
