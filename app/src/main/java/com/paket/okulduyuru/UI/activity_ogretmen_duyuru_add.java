@@ -122,14 +122,15 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         duyuruMap.put("title",duyuru_baslik);
         duyuruMap.put("bolum",duyuru_bolum);
         duyuruMap.put("yazar",duyuru_yazar);
+        Duyuru duyuru1 = new Duyuru();
+        String pid = (String) duyuruMap.get("pid");
+        duyuru1.setPid(pid);
 
         databaseReference.child(duyuruRandomKey).updateChildren(duyuruMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
-                            String pid = (String) duyuruMap.get("pid");
-                            duyuru.setPid(pid);
                             Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuru yayınlama işlemi başarılı.",Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
 

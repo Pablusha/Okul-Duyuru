@@ -3,7 +3,7 @@ package com.paket.okulduyuru.Model;
 public class Duyuru {
 
     private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate;
-    public String pid;
+    public static String pid;
 
     public Duyuru() {
 
@@ -24,7 +24,7 @@ public class Duyuru {
     }
 
     public void setPid(String pid) {
-        this.pid = pid;
+        Duyuru.pid = pid;
     }
 
     public Duyuru(String duyuruBaslik, String duyuruContext, String duyuruYazar, String duyuruTime, String duyuruDate, String pid) {
