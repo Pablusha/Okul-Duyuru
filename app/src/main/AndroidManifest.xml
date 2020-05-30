@@ -17,10 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+<<<<<<< HEAD
         <activity android:name=".UI.activity_duyuru_update_screen"></activity>
         <activity
             android:name=".UI.activity_ogretmen_duyuru_update"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+=======
+        <activity android:name=".GroupChatActivity"></activity>
+>>>>>>> 7d5cd979ee79e0fbdc328ba71e5365a0024fe13f
         <activity
             android:name=".UI.activity_ogretmen_duyuru_delete"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

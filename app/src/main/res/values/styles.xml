@@ -9,4 +9,6 @@
 </style>
 
 <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar"></style>
+
+<style name="AlertDialog" parent="Theme.AppCompat.Light.Dialog"></style>
 </resources>
