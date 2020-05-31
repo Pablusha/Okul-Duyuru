@@ -3,6 +3,7 @@ package com.paket.okulduyuru;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -48,6 +49,7 @@ public class SettingsActivity extends AppCompatActivity {
     private static final int GalleryPick = 1;
     private StorageReference UserProfileImagesRef;
     private String photoUrl;
+    private Toolbar mToolbar;
 
 
 
@@ -84,6 +86,12 @@ public class SettingsActivity extends AppCompatActivity {
                 startActivityForResult(galleryIntent, GalleryPick);
             }
         });
+
+        mToolbar = findViewById(R.id.settings_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setTitle("Ayarlar");
 
     }
 
