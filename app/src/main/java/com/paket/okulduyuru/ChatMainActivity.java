@@ -125,6 +125,11 @@ public class ChatMainActivity extends AppCompatActivity {
         finish();
     }
 
+    private void SendUserToFindFriendsActivity() {
+        Intent findFriendsIntent = new Intent(ChatMainActivity.this, FindFriendsActivity.class);
+        startActivity(findFriendsIntent);
+    }
+
 
     @Override
     protected void onStart() {
@@ -189,7 +194,7 @@ public class ChatMainActivity extends AppCompatActivity {
             RequestNewGroup();
         }
         if (item.getItemId() == R.id.main_find_friends_option) {
-
+            SendUserToFindFriendsActivity();
         }
         return true;
     }
