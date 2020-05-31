@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 
 public class activity_duyuru_update_screen extends AppCompatActivity {
@@ -36,24 +37,6 @@ public class activity_duyuru_update_screen extends AppCompatActivity {
 
         getComingIntent();
 
-    }
-
-    private void sendUpdatesToFirebase() {
-        if (isBaslikChanged() || isContextChanged()) {
-            Toast.makeText(activity_duyuru_update_screen.this,"Güncelleme başarılı.",Toast.LENGTH_LONG).show();
-        }
-    }
-
-    private boolean isContextChanged() {
-        return true;
-    }
-
-    private boolean isBaslikChanged() {
-        EditText duyuruBaslik = findViewById(R.id.ac_ogretmen_duyuru_update_title);
-        if (baslik.equals(duyuruBaslik.getText().toString())) {
-
-        }
-        return true;
     }
 
     private void getComingIntent() {

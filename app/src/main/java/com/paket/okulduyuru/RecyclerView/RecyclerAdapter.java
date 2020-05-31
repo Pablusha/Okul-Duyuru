@@ -50,13 +50,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, activity_duyuru_update_screen.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Duyuru duyuru = new Duyuru();
                 intent.putExtra("baslik",duyuruArrayList.get(position).getDuyuruBaslik());
                 intent.putExtra("context",duyuruArrayList.get(position).getDuyuruContext());
                 intent.putExtra("yazar",duyuruArrayList.get(position).getDuyuruYazar());
                 intent.putExtra("time",duyuruArrayList.get(position).getDuyuruTime());
                 intent.putExtra("date",duyuruArrayList.get(position).getDuyuruDate());
+                intent.putExtra("pid",duyuru.getPid());
                 mContext.startActivity(intent);
-
             }
         });
     }
