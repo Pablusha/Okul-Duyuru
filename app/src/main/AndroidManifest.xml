@@ -32,6 +32,13 @@
         <activity
             android:name=".UI.activity_duyuru_update_screen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".GroupChatActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity android:name=".UI.activity_duyuru_update_screen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+
         <activity
             android:name=".UI.activity_ogretmen_duyuru_update"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
