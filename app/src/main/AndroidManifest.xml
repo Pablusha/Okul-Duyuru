@@ -20,9 +20,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".ProfileActivity"
+        <activity android:name=".ChatActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+        <activity
+            android:name=".ProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-
         <activity
             android:name=".FindFriendsActivity"
             android:parentActivityName=".ChatMainActivity"
@@ -45,7 +47,7 @@
         <activity
             android:name=".SettingsActivity"
             android:parentActivityName=".ChatMainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
             android:name=".UI.EtkinlikActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

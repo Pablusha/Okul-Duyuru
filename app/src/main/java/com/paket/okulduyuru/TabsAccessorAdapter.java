@@ -56,7 +56,7 @@ public class TabsAccessorAdapter extends FragmentPagerAdapter {
         switch (position)
         {
             case 0:
-                return "Mesajlar";
+                return "Sohbetler";
 
             case 1:
                 return "Gruplar";

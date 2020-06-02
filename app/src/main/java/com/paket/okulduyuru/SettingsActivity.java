@@ -87,11 +87,6 @@ public class SettingsActivity extends AppCompatActivity {
             }
         });
 
-        mToolbar = findViewById(R.id.settings_toolbar);
-        setSupportActionBar(mToolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setTitle("Ayarlar");
 
     }
 
@@ -101,6 +96,11 @@ public class SettingsActivity extends AppCompatActivity {
         userName = findViewById(R.id.set_user_name);
         userStatus = findViewById(R.id.set_profile_status);
         userProfileImage = findViewById(R.id.set_profile_image);
+        mToolbar = findViewById(R.id.settings_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowCustomEnabled(true);
+        getSupportActionBar().setTitle("Ayarlar");
     }
 
 
@@ -180,12 +180,12 @@ public class SettingsActivity extends AppCompatActivity {
         }
         else
         {
-            HashMap<String, String> profileMap = new HashMap<>();
+            HashMap<String, Object> profileMap = new HashMap<>();
                 profileMap.put("status", setStatus);
                 profileMap.put("uid", currentUserID);
                 profileMap.put("name", setUserName);
                 profileMap.put("image",photoUrl);
-            RootRef.child("Users").child(currentUserID).setValue(profileMap)
+            RootRef.child("Users").child(currentUserID).updateChildren(profileMap)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
