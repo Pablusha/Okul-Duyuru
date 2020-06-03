@@ -21,7 +21,8 @@
         android:theme="@style/AppTheme">
 
         <activity android:name=".ChatActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" ></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:parentActivityName=".ChatMainActivity"></activity>
         <activity
             android:name=".ProfileActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
