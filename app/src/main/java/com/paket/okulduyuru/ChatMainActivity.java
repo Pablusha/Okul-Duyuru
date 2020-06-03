@@ -113,9 +113,7 @@ public class ChatMainActivity extends AppCompatActivity {
 
     private void SendUserToSettingsActivity() {
         Intent settingsIntent = new Intent(ChatMainActivity.this, SettingsActivity.class);
-        settingsIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(settingsIntent);
-        finish();
     }
 
     private void SendUserToLoginActivity() {

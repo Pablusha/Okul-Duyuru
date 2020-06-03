@@ -38,6 +38,7 @@ public class RequestsFragment extends Fragment {
 
     private View RequestsFragmentView;
     private RecyclerView myRequestsList;
+    private Button AcceptButton, CancelButton;
 
     private DatabaseReference ChatRequestsRef, UsersRef, ContactsRef;
     private FirebaseAuth firebaseAuth;
@@ -62,6 +63,8 @@ public class RequestsFragment extends Fragment {
         ChatRequestsRef = FirebaseDatabase.getInstance().getReference().child("Chat Requests");
         ContactsRef = FirebaseDatabase.getInstance().getReference().child("Contacts");
 
+        AcceptButton = RequestsFragmentView.findViewById(R.id.requests_accept_btn);
+        CancelButton = RequestsFragmentView.findViewById(R.id.requests_cancel_btn);
 
         myRequestsList = RequestsFragmentView.findViewById(R.id.chat_requests_list);
         myRequestsList.setLayoutManager(new LinearLayoutManager(getContext()));
