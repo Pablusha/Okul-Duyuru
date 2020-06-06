@@ -79,14 +79,8 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-
-
         String KEY_EMAIL = Paper.book().read(Sabit.KEY_EMAIL);
         String KEY_SIFRE = Paper.book().read(Sabit.KEY_SIFRE);
-
-
-
-
 
     }
 

@@ -8,16 +8,13 @@ import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
-
 import com.paket.okulduyuru.R;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-
 public class MainActivity extends AppCompatActivity {
   private CircleImageView imgLogo;
   private static int Gecis_Suresi = 4000; // 4 Saniye
-
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
         finish();
       }
     },Gecis_Suresi);
-
-
-
-
 
   }
 }

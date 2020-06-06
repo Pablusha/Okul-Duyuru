@@ -42,7 +42,6 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
   FirebaseUser user;
   String uid;
 
-
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -128,7 +127,6 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
     private void setUpToolbar() {
         toolbar = findViewById(R.id.ac_duyuru_toolbar);
         toolbar.setSubtitle("Bölüm Duyuruları");
-  }
-
+    }
 
 }

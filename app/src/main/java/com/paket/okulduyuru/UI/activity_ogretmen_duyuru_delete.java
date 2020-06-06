@@ -103,11 +103,9 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
         });
     }
 
-
     private void setUpToolbar() {
         toolbar = findViewById(R.id.ac_duyuru_toolbar);
         toolbar.setSubtitle("Yayınlanan Duyurular");
     }
-
 
 }

@@ -73,7 +73,6 @@ public class RegisterActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
 
-
         btnKayit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,11 +138,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }
 
-
                             }
                         });
-
-
             }
         });
 
@@ -172,7 +168,6 @@ public class RegisterActivity extends AppCompatActivity {
         ogrenciRef.addListenerForSingleValueEvent(eventListener);
     }
 
-
     private boolean emailCheck() {
         firebaseAuth.fetchSignInMethodsForEmail(edEMail.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
@@ -188,7 +183,6 @@ public class RegisterActivity extends AppCompatActivity {
                 });
         return true;
     }
-
 
     public void girisYap(View view) { //Login sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

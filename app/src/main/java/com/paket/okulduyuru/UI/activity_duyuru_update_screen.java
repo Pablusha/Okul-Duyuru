@@ -38,9 +38,6 @@ public class activity_duyuru_update_screen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_duyuru_update_screen);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("Duyuru");
-
-        reference = FirebaseDatabase.getInstance().getReference("Duyuru");
         btnUpdate = findViewById(R.id.ac_ogretmen_duyuru_update_btnGuncelle);
 
         baslik = getIntent().getStringExtra("baslik");
@@ -64,7 +61,6 @@ public class activity_duyuru_update_screen extends AppCompatActivity {
         duyuruContext.setText(context);
         duyuruYazar = findViewById(R.id.ac_ogretmen_duyuru_update_author);
         duyuruYazar.setText(yazar);
-
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

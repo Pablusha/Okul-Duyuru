@@ -36,7 +36,6 @@ public class activity_ogretmen_home extends AppCompatActivity {
         rl_duyuru_yonetim = findViewById(R.id.ac_ogretmen_home_cv_duyuru_yonetim);
         getAdSoyad();
 
-
         //Duyuru yönetim aktivitesine geçiş.
         rl_duyuru_yonetim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +52,6 @@ public class activity_ogretmen_home extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
 
     }
 

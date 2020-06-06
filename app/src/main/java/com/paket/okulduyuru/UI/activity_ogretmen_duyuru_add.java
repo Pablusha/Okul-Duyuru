@@ -47,7 +47,6 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ogretmen_duyuru_add);
 
-
         //Spinner
         bolumler = findViewById(R.id.ac_ogretmen_duyuru_add_spinner);
 
@@ -66,7 +65,6 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
         btn_duyuru_yayinla = findViewById(R.id.ac_ogretmen_duyuru_add_btnYayinla);
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Duyuru");
-
 
         btn_duyuru_yayinla.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,8 +139,6 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                         }
                     }
                 });
-
-
 
     }
 
