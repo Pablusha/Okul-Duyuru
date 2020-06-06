@@ -20,7 +20,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
-import com.paket.okulduyuru.RecyclerView.DuyuruViewHolder;
 import com.paket.okulduyuru.RecyclerView.RecyclerAdapter;
 
 import java.util.ArrayList;
@@ -44,7 +43,6 @@ public class activity_ogretmen_duyuru_update extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerUpdate);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         duyuruRef = FirebaseDatabase.getInstance().getReference();
         duyuruRef.keepSynced(true);

@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -23,6 +26,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
     private EditText edEmail,edSifre;
     private Button btnGiris;
     private FirebaseAuth firebaseAuth;
+    private CheckBox chkBeniHatirla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +36,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
         edEmail = findViewById(R.id.edittext_ogretmenEmail);
         edSifre = findViewById(R.id.edittext_ogretmenPassword);
         btnGiris = findViewById(R.id.btnGiris);
+        chkBeniHatirla = findViewById(R.id.ac_ogretmen_login_chk_beni_hatirla);
 
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -63,7 +68,6 @@ public class activity_ogretmen_login extends AppCompatActivity {
 
                             }
                         });
-
             }
         });
 

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.UI.activity_duyuru_update_screen;
@@ -50,13 +52,12 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, activity_duyuru_update_screen.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                Duyuru duyuru = new Duyuru();
                 intent.putExtra("baslik",duyuruArrayList.get(position).getDuyuruBaslik());
                 intent.putExtra("context",duyuruArrayList.get(position).getDuyuruContext());
                 intent.putExtra("yazar",duyuruArrayList.get(position).getDuyuruYazar());
                 intent.putExtra("time",duyuruArrayList.get(position).getDuyuruTime());
                 intent.putExtra("date",duyuruArrayList.get(position).getDuyuruDate());
-                intent.putExtra("pid",duyuru.getPid());
+                intent.putExtra("pid",duyuruArrayList.get(position).getPid());
                 mContext.startActivity(intent);
             }
         });

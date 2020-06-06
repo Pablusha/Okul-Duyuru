@@ -20,7 +20,6 @@
             android:textColor="@color/colorWhite"
             android:text="@string/hosgeldin"
             android:textSize="25sp"
-            android:drawableRight="@drawable/ic_user"
             android:paddingRight="20dp"
             android:drawableTint="@color/colorPrimary" />
 
