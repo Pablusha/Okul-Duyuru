@@ -52,13 +52,22 @@
         android:layout_marginTop="10dp"
         android:hint="@string/password"/>
 
+    <CheckBox
+        android:id="@+id/ac_ogretmen_login_chk_beni_hatirla"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_30sdp"
+        android:layout_marginStart="-8dp"
+        android:buttonTint="#073647"
+        android:text="@string/beniHatirla"
+        android:textColor="@color/colorWhite" />
+
   </LinearLayout>
 
   <Button
       android:id="@+id/btnGiris"
       android:layout_width="250dp"
       android:layout_height="40dp"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="8dp"
       android:background="@color/colorButton"
       android:textSize="15sp"
       android:textColor="@color/colorWhite"

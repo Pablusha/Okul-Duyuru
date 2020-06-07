@@ -17,8 +17,6 @@ public class ArelWebView extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_arel_web_view);
 
-
-
     webView=(WebView)findViewById(R.id.webView);
 
     webView.getSettings().setJavaScriptEnabled(true);

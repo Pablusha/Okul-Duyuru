@@ -34,8 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-    private FirebaseUser user;
-    private String uid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +71,6 @@ public class RegisterActivity extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference("Ogrenci");
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
-
 
         btnKayit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,11 +137,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                                 }
 
-
                             }
                         });
-
-
             }
         });
 
@@ -172,7 +167,6 @@ public class RegisterActivity extends AppCompatActivity {
         ogrenciRef.addListenerForSingleValueEvent(eventListener);
     }
 
-
     private boolean emailCheck() {
         firebaseAuth.fetchSignInMethodsForEmail(edEMail.getText().toString())
                 .addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
@@ -188,7 +182,6 @@ public class RegisterActivity extends AppCompatActivity {
                 });
         return true;
     }
-
 
     public void girisYap(View view) { //Login sayfasına geçiş.
         Intent intent = new Intent(getApplicationContext(), LoginActivity.class);

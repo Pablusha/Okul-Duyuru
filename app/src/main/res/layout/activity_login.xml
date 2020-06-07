@@ -63,13 +63,14 @@
             android:drawableLeft="@drawable/ic_lock"
             android:layout_marginTop="10dp"
             android:hint="@string/password"/> <!-- Promp Text -->
-        
+
         <CheckBox
             android:id="@+id/ac_ogrenci_login_chk_beni_hatirla"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
-            android:text="@string/beniHatirla"
             android:layout_marginStart="-8dp"
+            android:buttonTint="#073647"
+            android:text="@string/beniHatirla"
             android:textColor="@color/colorWhite" />
 
 

@@ -20,7 +20,6 @@
             android:textColor="@color/colorWhite"
             android:text="@string/hosgeldin"
             android:textSize="25sp"
-            android:drawableRight="@drawable/ic_user"
             android:paddingRight="20dp"
             android:drawableTint="@color/colorPrimary" />
 
@@ -148,14 +147,14 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:id="@+id/ac_ogretmen_home_cv_etkinlik_yonetim"
+                android:id="@+id/ac_ogretmen_home_cv_etkinlik"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:background="@drawable/ogretmen_roundrect"
                 android:layout_alignParentEnd="true">
 
                 <ImageView
-                    android:id="@+id/ac_ogretmen_home_iv_etkinlik_yonetim"
+                    android:id="@+id/ac_ogretmen_home_iv_etkinlik"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:src="@drawable/etkinlikler"
@@ -163,11 +162,11 @@
                     android:layout_marginTop="20dp" />
 
                 <TextView
-                    android:id="@+id/ac_ogretmen_home_tv_etkinlik_yonetim"
+                    android:id="@+id/ac_ogretmen_home_tv_etkinlik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_below="@+id/ac_ogretmen_home_iv_etkinlik_yonetim"
+                    android:layout_below="@+id/ac_ogretmen_home_iv_etkinlik"
                     android:layout_marginTop="20dp"
                     android:textColor="@color/colorWhite"
                     android:text="@string/etkinlikler"

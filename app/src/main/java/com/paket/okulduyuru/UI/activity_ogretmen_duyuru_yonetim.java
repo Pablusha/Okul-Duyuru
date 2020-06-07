@@ -22,7 +22,6 @@ public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
         rl_delete_button = findViewById(R.id.ac_ogretmen_duyuru_delete);
         rl_update_button = findViewById(R.id.ac_ogretmen_duyuru_update);
 
-
         //Duyuru ekleme aktivitesine geçiş.
         rl_add_button.setOnClickListener(new View.OnClickListener() {
             @Override

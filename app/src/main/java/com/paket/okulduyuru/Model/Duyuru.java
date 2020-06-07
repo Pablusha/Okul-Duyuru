@@ -2,8 +2,16 @@ package com.paket.okulduyuru.Model;
 
 public class Duyuru {
 
-    private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate;
+    private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate,duyuruBolum;
     public static String pid;
+
+    public String getDuyuruBolum() {
+        return duyuruBolum;
+    }
+
+    public void setDuyuruBolum(String duyuruBolum) {
+        this.duyuruBolum = duyuruBolum;
+    }
 
     public Duyuru() {
 
@@ -27,13 +35,14 @@ public class Duyuru {
         Duyuru.pid = pid;
     }
 
-    public Duyuru(String duyuruBaslik, String duyuruContext, String duyuruYazar, String duyuruTime, String duyuruDate, String pid) {
+    public Duyuru(String duyuruBaslik, String duyuruContext, String duyuruYazar, String duyuruTime, String duyuruDate, String pid,String duyuruBolum) {
         this.duyuruBaslik = duyuruBaslik;
         this.duyuruContext = duyuruContext;
         this.duyuruYazar = duyuruYazar;
         this.duyuruTime = duyuruTime;
         this.duyuruDate = duyuruDate;
         this.pid = pid;
+        this.duyuruBolum = duyuruBolum;
     }
 
     public String getDuyuruBaslik() {
