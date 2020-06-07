@@ -40,6 +40,8 @@ public class activity_duyuru_update_screen extends AppCompatActivity {
 
         btnUpdate = findViewById(R.id.ac_ogretmen_duyuru_update_btnGuncelle);
 
+        reference = FirebaseDatabase.getInstance().getReference("Duyuru");
+
         baslik = getIntent().getStringExtra("baslik");
         context = getIntent().getStringExtra("context");
         yazar = getIntent().getStringExtra("yazar");

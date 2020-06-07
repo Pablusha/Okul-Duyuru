@@ -14,11 +14,61 @@
     <string name="eMail">E-Posta:</string>
     <string name="bolum">Bölümünüzü Seçiniz:</string>
     <string-array name="bolumler">
-        <item>Bölüm Seçiniz:</item>
+        <item>Adalet Programı</item>
+        <item>Anestezi Programı</item>
+        <item>Anestezi Programı(İÖ)</item>
+        <item>Aşçılık Programı</item>
+        <item>Aşçılık Programı(İÖ)</item>
+        <item>Bankacılık ve Sigortacılık Programı</item>
+        <item>Bankacılık ve Sigortacılık Programı(İÖ)</item>
+        <item>Basım ve Yayın Teknolojileri Programı</item>
         <item>Bilgisayar Programcılığı</item>
         <item>Bilgisayar Programcılığı(İÖ)</item>
-        <item>Anestezi</item>
-        <item>Yazılım Mühendisliği</item>
+        <item>Çocuk Gelişimi Programı</item>
+        <item>Çocuk Gelişimi Programı(İÖ)</item>
+        <item>Dış Ticaret Programı</item>
+        <item>Elektrik Programı</item>
+        <item>Elektrik Teknolojisi Programı</item>
+        <item>Fizyoterapi Programı</item>
+        <item>Fizyoterapi Programı(İÖ)</item>
+        <item>Grafik Tasarımı</item>
+        <item>Grafik Tasarımı(İÖ)</item>
+        <item>Halkla İlişkiler ve Tanıtım Programı</item>
+        <item>İlk ve Acil Yardım Programı</item>
+        <item>İlk ve Acil Yardım Programı(İÖ)</item>
+        <item>İnsan Kaynakları Yönetimi</item>
+        <item>İnşaat Teknolojisi Programı</item>
+        <item>İnşaat Teknolojisi Programı(İÖ)</item>
+        <item>İş Sağlığı ve Güvenliği Programı</item>
+        <item>İş Sağlığı ve Güvenliği Programı(İÖ)</item>
+        <item>İşletme Yönetimi Programı</item>
+        <item>Lojistik Programı</item>
+        <item>Makine Programı</item>
+        <item>Mimari Restorasyon Programı</item>
+        <item>Mimari Restorasyon Programı(İÖ)</item>
+        <item>Moda Tasarımı Programı</item>
+        <item>Muhasebe ve Vergi Uygulamaları Programı</item>
+        <item>Optisyenlik Programı</item>
+        <item>Optisyenlik Programı(İÖ)</item>
+        <item>Radyo ve Televizyon Programcılığı Programı</item>
+        <item>Radyo ve Televizyon Programcılığı Programı(İÖ)</item>
+        <item>Sağlık Kurumları İşletmeciliği Programı</item>
+        <item>Sivil Hava Ulaştırma İşletmeciliği Programı</item>
+        <item>Sivil Hava Ulaştırma İşletmeciliği Programı(İÖ)</item>
+        <item>Sivil Havacılık Kabin Hizmetleri Programı</item>
+        <item>Sivil Havacılık Kabin Hizmetleri Programı(İÖ)</item>
+        <item>Tıbbi Dokümantasyon ve Sekreterlik Programı</item>
+        <item>Tıbbi Dokümantasyon ve Sekreterlik Programı(İÖ)</item>
+        <item>Tıbbi Görüntüleme Teknikleri Programı</item>
+        <item>Tıbbi Görüntüleme Teknikleri Programı(İÖ)</item>
+        <item>Tıbbi Laboratuvar Teknikleri Programı</item>
+        <item>Tıbbi Laboratuvar Teknikleri Programı(İÖ)</item>
+        <item>Turist Rehberliği Programı</item>
+        <item>Turist Rehberliği Programı(İÖ)</item>
+        <item>Turizm ve Otel İşletmeciliği Programı</item>
+        <item>Uçak Teknolojisi Programı</item>
+        <item>Uygulamalı İngilizce ve Çevirmenlik Programı</item>
+        <item>Uygulamalı İngilizce ve Çevirmenlik Programı(İÖ)</item>
     </string-array>
     <string name="hosgeldin">Hoşgeldin!</string>
     <string name="duyurular">Duyurular</string>

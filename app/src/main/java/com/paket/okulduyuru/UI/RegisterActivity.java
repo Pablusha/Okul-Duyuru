@@ -34,8 +34,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference databaseReference;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore firebaseFirestore;
-    private FirebaseUser user;
-    private String uid;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

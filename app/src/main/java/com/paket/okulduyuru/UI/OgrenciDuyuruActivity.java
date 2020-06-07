@@ -13,7 +13,6 @@ import android.widget.Toolbar;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,11 +23,7 @@ import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.RecyclerView.RecyclerAdapter;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-
-import static com.paket.okulduyuru.UI.activity_ogretmen_duyuru_add.duyuruRandomKey;
 
 public class OgrenciDuyuruActivity extends AppCompatActivity {
 

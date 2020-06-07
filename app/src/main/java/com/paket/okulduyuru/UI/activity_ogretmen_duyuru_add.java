@@ -16,20 +16,14 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
-import java.util.Iterator;
-
 
 public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
@@ -39,7 +33,6 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
     private Button btn_duyuru_yayinla;
     private Spinner bolumler;
     DatabaseReference databaseReference;
-    Duyuru duyuru;
     public static String duyuruRandomKey,saveCurrentDate,saveCurrentTime;
 
     @Override

@@ -1,7 +1,5 @@
 package com.paket.okulduyuru.Model;
 
-import java.util.List;
-
 public class Duyuru {
 
     private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate,duyuruBolum;

@@ -40,6 +40,21 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+        String checkbox = preferences.getString("hatirla","");
+        if (checkbox.equals("true")) {
+            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+        } else if (checkbox.equals("false")) {
+
+        }
+
+        SharedPreferences preferences2 = getSharedPreferences("ogretmenCheckbox",MODE_PRIVATE);
+        String checkbox2 = preferences2.getString("ogretmenHatirla","");
+        if (checkbox2.equals("true")) {
+            startActivity(new Intent(getApplicationContext(),activity_ogretmen_home.class));
+        }
+
+
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,6 +85,23 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        chkBeniHatirla.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (buttonView.isChecked()) {
+                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("hatirla","true");
+                    editor.apply();
+                } else if (!buttonView.isChecked()) {
+                    SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                    SharedPreferences.Editor editor = preferences.edit();
+                    editor.putString("hatirla","false");
+                    editor.apply();
+                }
+            }
+        });
+
         btnOgretmenGiris.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,6 +109,7 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
     }
 

@@ -1,15 +1,15 @@
 package com.paket.okulduyuru.UI;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-
-
 import android.widget.RelativeLayout;
-
 import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,11 +30,14 @@ public class HomeActivity extends AppCompatActivity {
     private RelativeLayout rlDuyurular,rlArelWeb,rlChat,rlEtkinlikler;
     private FirebaseUser user;
     private String uid;
+    private FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        firebaseAuth = FirebaseAuth.getInstance();
 
         txtAdSoyad = findViewById(R.id.adSoyad);
         rlEtkinlikler = findViewById(R.id.ac_home_cv_etkinlikler);
@@ -82,6 +85,32 @@ public class HomeActivity extends AppCompatActivity {
         String KEY_EMAIL = Paper.book().read(Sabit.KEY_EMAIL);
         String KEY_SIFRE = Paper.book().read(Sabit.KEY_SIFRE);
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(false);
+        builder.setMessage("Hesabınızdan çıkış yapmak istediğinize emin misiniz?");
+        builder.setPositiveButton("EVET", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                firebaseAuth.signOut();
+                SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+                editor.putString("hatirla","false");
+                editor.apply();
+                finish();
+            }
+        });
+        builder.setNegativeButton("HAYIR", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
     private void getAdSoyad() {
