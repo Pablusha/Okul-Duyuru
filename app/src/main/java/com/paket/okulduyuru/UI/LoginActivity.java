@@ -17,7 +17,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.paket.okulduyuru.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -26,6 +30,9 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnGiris,btnOgretmenGiris;
     private FirebaseAuth firebaseAuth;
     private CheckBox chkBeniHatirla;
+    private DatabaseReference UsersRef;
+    private FirebaseUser users;
+    private String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         chkBeniHatirla = findViewById(R.id.ac_ogrenci_login_chk_beni_hatirla);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
         String checkbox = preferences.getString("hatirla","");
@@ -53,7 +61,6 @@ public class LoginActivity extends AppCompatActivity {
         if (checkbox2.equals("true")) {
             startActivity(new Intent(getApplicationContext(),activity_ogretmen_home.class));
         }
-
 
         btnGiris.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,12 +83,16 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                                    setToken();
+
                                 } else {
                                     emailCheck();
                                 }
+
+
                             }
                         });
+
             }
         });
 
@@ -111,6 +122,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+
     }
 
     private void emailCheck() {
@@ -136,5 +148,24 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
         startActivity(intent);
 
+    }
+
+    private void setToken() {
+
+        String currentUserID = firebaseAuth.getCurrentUser().getUid();
+        String deviceToken = FirebaseInstanceId.getInstance().getToken();
+
+        UsersRef.child(currentUserID).child("device_token")
+                .setValue(deviceToken)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful())
+                        {
+                            startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+                        }
+                    }
+
+                });
     }
 }
