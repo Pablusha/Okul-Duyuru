@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.ChatMainActivity;
 import com.paket.okulduyuru.R;
-import com.paket.okulduyuru.utils.Sabit;
 
 import io.paperdb.Paper;
 
@@ -81,9 +80,6 @@ public class HomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        String KEY_EMAIL = Paper.book().read(Sabit.KEY_EMAIL);
-        String KEY_SIFRE = Paper.book().read(Sabit.KEY_SIFRE);
 
     }
 
