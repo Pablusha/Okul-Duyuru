@@ -19,6 +19,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.SignInMethodQueryResult;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.paket.okulduyuru.R;
 
 public class activity_ogretmen_login extends AppCompatActivity {
@@ -27,6 +30,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
     private Button btnGiris;
     private FirebaseAuth firebaseAuth;
     private CheckBox chkBeniHatirla;
+    private DatabaseReference UsersRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
         chkBeniHatirla = findViewById(R.id.ac_ogretmen_login_chk_beni_hatirla);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        UsersRef = FirebaseDatabase.getInstance().getReference().child("Users");
 
         SharedPreferences preferences = getSharedPreferences("ogretmenCheckbox",MODE_PRIVATE);
         String checkbox = preferences.getString("ogretmenHatirla","");
@@ -69,7 +74,7 @@ public class activity_ogretmen_login extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-                                    startActivity(new Intent(getApplicationContext(), activity_ogretmen_home.class));
+                                    setToken();
                                 } else {
                                     emailCheck();
                                 }
@@ -121,5 +126,25 @@ public class activity_ogretmen_login extends AppCompatActivity {
     public void kayitOl(View view) {
         Intent intent = new Intent(getApplicationContext(), activity_ogretmen_register.class);
         startActivity(intent);
+    }
+
+
+    private void setToken() {
+
+        String currentUserID = firebaseAuth.getCurrentUser().getUid();
+        String deviceToken = FirebaseInstanceId.getInstance().getToken();
+
+        UsersRef.child(currentUserID).child("device_token")
+                .setValue(deviceToken)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful())
+                        {
+                            startActivity(new Intent(getApplicationContext(), activity_ogretmen_home.class));
+                        }
+                    }
+
+                });
     }
 }

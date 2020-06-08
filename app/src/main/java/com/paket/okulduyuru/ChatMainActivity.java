@@ -183,6 +183,14 @@ public class ChatMainActivity extends AppCompatActivity {
 
         if (item.getItemId() == R.id.main_logout_option) {
             firebaseAuth.signOut();
+            SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("hatirla","false");
+            editor.apply();
+            SharedPreferences preferences2 = getSharedPreferences("ogretmenCheckbox",MODE_PRIVATE);
+            SharedPreferences.Editor editor2 = preferences2.edit();
+            editor2.putString("ogretmenHatirla","false");
+            editor2.apply();
             SendUserToLoginActivity();
 
         }

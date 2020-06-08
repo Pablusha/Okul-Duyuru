@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.paket.okulduyuru.Model.Ogrenci;
 import com.paket.okulduyuru.R;
 
@@ -122,6 +123,14 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
+                                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
+
+                                    String currentUserID = firebaseAuth.getCurrentUser().getUid();
+                                    databaseReference.child("Users").child(currentUserID).setValue("");
+
+                                    databaseReference.child("Users").child(currentUserID).child("device_token")
+                                            .setValue(deviceToken);
+
                                     Ogrenci ogrenci = new Ogrenci(ogrenci_no,ad_soyad,email,sifre,bolum);
                                     FirebaseDatabase.getInstance().getReference("Ogrenci")
                                             .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
