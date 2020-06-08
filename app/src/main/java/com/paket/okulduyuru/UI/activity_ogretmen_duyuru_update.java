@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toolbar;
 
@@ -64,7 +65,7 @@ public class activity_ogretmen_duyuru_update extends AppCompatActivity {
                     duyuru.setDuyuruTime(snapshot.child("time").getValue().toString());
                     duyuru.setDuyuruDate(snapshot.child("date").getValue().toString());
                     duyuru.setDuyuruYazar(snapshot.child("yazar").getValue().toString());
-
+                    duyuru.setPid(snapshot.child("pid").getValue().toString());
                     duyurular.add(duyuru);
                 }
                 ogretmenRecyclerAdapter = new OgretmenRecyclerAdapter(getApplicationContext(),duyurular);

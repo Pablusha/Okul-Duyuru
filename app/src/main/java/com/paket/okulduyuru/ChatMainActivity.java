@@ -180,7 +180,6 @@ public class ChatMainActivity extends AppCompatActivity {
 
         super.onOptionsItemSelected(item);
 
-
         if (item.getItemId() == R.id.main_logout_option) {
             firebaseAuth.signOut();
             SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);

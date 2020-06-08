@@ -16,6 +16,7 @@ import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.UI.activity_duyuru_update_screen;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class OgretmenRecyclerAdapter extends RecyclerView.Adapter<OgretmenRecyclerAdapter.ViewHolder> {
 
@@ -42,18 +43,22 @@ public class OgretmenRecyclerAdapter extends RecyclerView.Adapter<OgretmenRecycl
         holder.txtYazar.setText(duyuruArrayList.get(position).getDuyuruYazar());
         holder.txtTime.setText(duyuruArrayList.get(position).getDuyuruTime());
         holder.txtDate.setText(duyuruArrayList.get(position).getDuyuruDate());
+        final List<String> duyuru = new ArrayList<>();
+        String pid = duyuruArrayList.get(position).getPid();
+        duyuru.add(pid);
 
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, activity_duyuru_update_screen.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                Duyuru duyuru = new Duyuru();
                 intent.putExtra("baslik",duyuruArrayList.get(position).getDuyuruBaslik());
                 intent.putExtra("context",duyuruArrayList.get(position).getDuyuruContext());
                 intent.putExtra("yazar",duyuruArrayList.get(position).getDuyuruYazar());
                 intent.putExtra("time",duyuruArrayList.get(position).getDuyuruTime());
                 intent.putExtra("date",duyuruArrayList.get(position).getDuyuruDate());
-                intent.putExtra("pid",duyuruArrayList.get(position).getPid());
+                intent.putExtra("pid",duyuru.getPid());
                 mContext.startActivity(intent);
             }
         });

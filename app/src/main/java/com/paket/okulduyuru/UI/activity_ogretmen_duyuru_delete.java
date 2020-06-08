@@ -63,6 +63,8 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
                 duyuruRef.child(pid).removeValue();
                 duyurular.remove(position);
                 recyclerAdapter.notifyDataSetChanged();
+                recyclerAdapter.notifyItemRemoved(target.getAdapterPosition());
+                recyclerAdapter.notifyItemRangeChanged(target.getAdapterPosition(),duyurular.size());
             }
         });
         helper.attachToRecyclerView(recyclerView);
@@ -80,7 +82,6 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
                     duyuru.setDuyuruTime(snapshot.child("time").getValue().toString());
                     duyuru.setDuyuruDate(snapshot.child("date").getValue().toString());
                     duyuru.setDuyuruYazar(snapshot.child("yazar").getValue().toString());
-
                     duyurular.add(duyuru);
                 }
                 recyclerAdapter = new RecyclerAdapter(getApplicationContext(),duyurular);

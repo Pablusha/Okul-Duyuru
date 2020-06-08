@@ -103,6 +103,16 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
+                if (sifre.length() < 6) {
+                    Toast.makeText(RegisterActivity.this,"Şifreniz en az 6 karakter olmalıdır.",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                if (sifre_onay.length() < 6) {
+                    Toast.makeText(RegisterActivity.this,"Şifreniz en az 6 karakter olmalıdır.",Toast.LENGTH_LONG).show();
+                    return;
+                }
+
                 if (TextUtils.isEmpty(sifre_onay)) {
                     Toast.makeText(RegisterActivity.this,"Şifrenizi onaylamanız gerekiyor.",Toast.LENGTH_LONG).show();
                     return;
