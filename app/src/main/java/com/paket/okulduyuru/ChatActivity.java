@@ -72,6 +72,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         IntializeControllers();
+        DisplayLastSeen();
 
         userName.setText(messageReceiverName);
         Picasso.get().load(messageReceiverImage).placeholder(R.drawable.profile_image).into(userImage);

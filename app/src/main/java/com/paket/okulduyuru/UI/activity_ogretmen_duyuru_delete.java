@@ -1,15 +1,26 @@
 package com.paket.okulduyuru.UI;
 
+import androidx.annotation.FontRes;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.Toolbar;
 
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.firebase.ui.database.SnapshotParser;
+import com.google.api.Quota;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -20,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Duyuru;
 import com.paket.okulduyuru.R;
 import com.paket.okulduyuru.RecyclerView.RecyclerAdapter;
+import com.paket.okulduyuru.RecyclerView.ViewHolder;
 
 import java.util.ArrayList;
 
@@ -28,7 +40,6 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
     private Toolbar toolbar;
     DatabaseReference duyuruRef;
     RecyclerView recyclerView;
-    FirebaseDatabase mFirebaseDatabase;
     ArrayList<Duyuru> duyurular;
     RecyclerAdapter recyclerAdapter;
 
@@ -46,7 +57,7 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
 
         getDataFromFirebase();
         setUpToolbar();
-        
+
     }
 
     private void getDataFromFirebase() {

@@ -36,9 +36,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
     @Override
     public RecyclerAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.duyuru_items_layout,parent,false);
-
         return new ViewHolder(view);
-
     }
 
     @Override
@@ -74,7 +72,34 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewHo
             txtYazar = itemView.findViewById(R.id.ac_cv_duyuru_yazar);
             txtDate = itemView.findViewById(R.id.ac_cv_duyuru_date);
             parentLayout = itemView.findViewById(R.id.ac_items_layout);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    mClickListener.onItemClick(view,getAdapterPosition());
+                }
+            });
+
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    mClickListener.onItemLongClick(view,getAdapterPosition());
+                    return true;
+                }
+            });
         }
+
+    }
+
+    private ClickListener mClickListener;
+
+    public interface ClickListener {
+        void onItemClick(View view, int position);
+        void onItemLongClick(View view,int position);
+    }
+
+    public void setOnClickListener(ClickListener clickListener) {
+        mClickListener = clickListener;
     }
 
 }
