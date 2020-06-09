@@ -33,6 +33,11 @@ import com.google.firebase.database.ValueEventListener;
 import com.paket.okulduyuru.Model.Ogretmen;
 import com.paket.okulduyuru.UI.LoginActivity;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Locale;
+
 public class ChatMainActivity extends AppCompatActivity {
 
     private ViewPager myViewPager;
@@ -40,8 +45,8 @@ public class ChatMainActivity extends AppCompatActivity {
     private TabsAccessorAdapter myTabsAccessorAdapter;
 
     public FirebaseAuth firebaseAuth;
-    public FirebaseUser currentUser;
     private DatabaseReference RootRef;
+    private String currentUserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +55,6 @@ public class ChatMainActivity extends AppCompatActivity {
 
 
         firebaseAuth = FirebaseAuth.getInstance();
-        currentUser = firebaseAuth.getCurrentUser();
         RootRef = FirebaseDatabase.getInstance().getReference();
 
 
@@ -134,13 +138,46 @@ public class ChatMainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
         if (currentUser == null) {
             SendUserToLoginActivity();
         }
         else {
+            updateUserStatus("online");
+
             VerifyUserExistance();
         }
     }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
+        if (currentUser != null)
+        {
+            updateUserStatus("offline");
+        }
+    }
+
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+
+        if (currentUser != null)
+        {
+            updateUserStatus("offline");
+        }
+    }
+
+
 
     private void VerifyUserExistance() {
         String currentUserID = firebaseAuth.getCurrentUser().getUid();
@@ -181,6 +218,7 @@ public class ChatMainActivity extends AppCompatActivity {
         super.onOptionsItemSelected(item);
 
         if (item.getItemId() == R.id.main_logout_option) {
+            updateUserStatus("offline");
             firebaseAuth.signOut();
             SharedPreferences preferences = getSharedPreferences("checkbox",MODE_PRIVATE);
             SharedPreferences.Editor editor = preferences.edit();
@@ -206,5 +244,31 @@ public class ChatMainActivity extends AppCompatActivity {
     }
 
 
+
+
+
+    private void updateUserStatus(String state)
+    {
+        String saveCurrentTime, saveCurrentDate;
+
+        Calendar calendar = Calendar.getInstance();
+
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd MMM, yyyy", new Locale("tr"));
+        saveCurrentDate = currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm", new Locale("tr"));
+        saveCurrentTime = currentTime.format(calendar.getTime());
+
+        HashMap<String, Object> onlineStateMap = new HashMap<>();
+        onlineStateMap.put("time", saveCurrentTime);
+        onlineStateMap.put("date", saveCurrentDate);
+        onlineStateMap.put("state", state);
+
+        currentUserID = firebaseAuth.getCurrentUser().getUid();
+
+        RootRef.child("Users").child(currentUserID).child("userState")
+                .updateChildren(onlineStateMap);
+
+    }
 
 }
