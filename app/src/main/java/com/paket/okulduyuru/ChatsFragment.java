@@ -100,7 +100,26 @@ public class ChatsFragment extends Fragment {
                                     final String retStatus = dataSnapshot.child("status").getValue().toString();
 
                                     holder.userName.setText(retName);
-                                    holder.userStatus.setText("Son Görülme: " + "\n" + "Tarih " + " Saat");
+
+                                    if (dataSnapshot.child("userState").hasChild("state"))
+                                    {
+                                        String state = dataSnapshot.child("userState").child("state").getValue().toString();
+                                        String date = dataSnapshot.child("userState").child("date").getValue().toString();
+                                        String time = dataSnapshot.child("userState").child("time").getValue().toString();
+
+                                        if (state.equals("online"))
+                                        {
+                                            holder.userStatus.setText("çevrimiçi");
+                                        }
+                                        if (state.equals("offline"))
+                                        {
+                                            holder.userStatus.setText("Son Görülme: " + date + " " + time);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        holder.userStatus.setText("çevrimdışı");
+                                    }
 
 
                                     holder.itemView.setOnClickListener(new View.OnClickListener() {

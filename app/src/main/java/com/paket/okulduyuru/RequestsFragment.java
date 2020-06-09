@@ -214,6 +214,82 @@ public class RequestsFragment extends Fragment {
                                             }
                                         });
                                     }
+
+                                    else if (type.equals("sent"))
+                                    {
+                                        Button request_sent_btn = holder.itemView.findViewById(R.id.requests_accept_btn);
+                                        request_sent_btn.setText("İstek Gönderildi");
+
+                                        holder.itemView.findViewById(R.id.requests_cancel_btn).setVisibility(View.INVISIBLE);
+
+                                        UsersRef.child(list_user_id).addValueEventListener(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                                if (dataSnapshot.hasChild("image"))
+                                                {
+                                                    final String requestProfileImage = dataSnapshot.child("image").getValue().toString();
+
+                                                    Picasso.get().load(requestProfileImage).into(holder.profileImage);
+                                                }
+                                                final String requestUserName = dataSnapshot.child("name").getValue().toString();
+                                                final String requestUserStatus = dataSnapshot.child("status").getValue().toString();
+
+                                                holder.userName.setText(requestUserName);
+                                                holder.userStatus.setText("Mesajlaşmak için istek gönder " + requestUserName);
+
+
+                                                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View v) {
+                                                        CharSequence options[] = new CharSequence[]
+                                                                {
+                                                                        "Mesaj İsteğini İptal Et"
+
+                                                                };
+
+                                                        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                                        builder.setTitle("Zaten bir mesaj isteği gönderdin");
+
+                                                        builder.setItems(options, new DialogInterface.OnClickListener() {
+                                                            @Override
+                                                            public void onClick(DialogInterface dialog, int which) {
+                                                                if (which == 0)
+                                                                {
+                                                                    ChatRequestsRef.child(currentUserID).child(list_user_id)
+                                                                            .removeValue()
+                                                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                @Override
+                                                                                public void onComplete(@NonNull Task<Void> task) {
+                                                                                    if (task.isSuccessful())
+                                                                                    {
+                                                                                        ChatRequestsRef.child(list_user_id).child(currentUserID)
+                                                                                                .removeValue()
+                                                                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                                                                    @Override
+                                                                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                                                                        if (task.isSuccessful())
+                                                                                                        {
+                                                                                                            Toast.makeText(getContext(), "Kişi Reddedildi!", Toast.LENGTH_SHORT).show();
+                                                                                                        }
+                                                                                                    }
+                                                                                                });
+                                                                                    }
+                                                                                }
+                                                                            });
+                                                                }
+                                                            }
+                                                        });
+                                                        builder.show();
+                                                    }
+                                                });
+                                            }
+
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
                                 }
                             }
 
