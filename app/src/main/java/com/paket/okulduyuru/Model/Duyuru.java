@@ -17,6 +17,10 @@ public class Duyuru {
 
     }
 
+    public Duyuru(String duyuruBaslik,String duyuruContext,String duyuruTime,String duyuruDate,String duyuruYazar) {
+
+    }
+
     public String getDuyuruDate() {
         return duyuruDate;
     }
