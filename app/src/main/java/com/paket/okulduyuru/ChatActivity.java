@@ -29,9 +29,12 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -47,13 +50,16 @@ public class ChatActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private DatabaseReference RootRef;
 
-    private ImageButton SendMessageButton;
+    private ImageButton SendMessageButton, SendFilesButton;
     private EditText MessageInputText;
 
     private final List<Messages> messagesList = new ArrayList<>();
     private LinearLayoutManager linearLayoutManager;
     private MessageAdapter messageAdapter;
     private RecyclerView userMessagesList;
+
+
+    private String saveCurrentTime, saveCurrentDate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +80,7 @@ public class ChatActivity extends AppCompatActivity {
         IntializeControllers();
         DisplayLastSeen();
 
+
         userName.setText(messageReceiverName);
         Picasso.get().load(messageReceiverImage).placeholder(R.drawable.profile_image).into(userImage);
 
@@ -84,6 +91,9 @@ public class ChatActivity extends AppCompatActivity {
                 SendMessage();
             }
         });
+
+
+        DisplayLastSeen();
     }
 
 
@@ -108,6 +118,7 @@ public class ChatActivity extends AppCompatActivity {
         userLastSeen = findViewById(R.id.custom_user_last_seen);
 
         SendMessageButton = (ImageButton) findViewById(R.id.send_message_btn);
+        SendFilesButton = (ImageButton) findViewById(R.id.send_files_btn);
         MessageInputText = (EditText) findViewById(R.id.input_message);
 
         messageAdapter = new MessageAdapter(messagesList);
@@ -117,13 +128,21 @@ public class ChatActivity extends AppCompatActivity {
         userMessagesList.setAdapter(messageAdapter);
 
 
+        Calendar calendar = Calendar.getInstance();
+
+        SimpleDateFormat currentDate = new SimpleDateFormat("dd MMM, yyyy", new Locale("tr"));
+        saveCurrentDate = currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm", new Locale("tr"));
+        saveCurrentTime = currentTime.format(calendar.getTime());
+
     }
 
 
 
     private void DisplayLastSeen()
     {
-        RootRef.child("Users").child(messageSenderID)
+        RootRef.child("Users").child(messageReceiverID)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -223,6 +242,10 @@ public class ChatActivity extends AppCompatActivity {
             messageTextBody.put("message", messageText);
             messageTextBody.put("type", "text");
             messageTextBody.put("from", messageSenderID);
+            messageTextBody.put("to", messageReceiverID);
+            messageTextBody.put("messageID", messagePushID);
+            messageTextBody.put("time", saveCurrentTime);
+            messageTextBody.put("date", saveCurrentDate);
 
 
             Map messageBodyDetails = new HashMap();
