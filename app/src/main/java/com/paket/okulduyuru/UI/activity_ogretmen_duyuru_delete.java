@@ -26,11 +26,11 @@ import java.util.ArrayList;
 public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
 
     private Toolbar toolbar;
-    public DatabaseReference duyuruRef;
-    public RecyclerView recyclerView;
+    DatabaseReference duyuruRef;
+    RecyclerView recyclerView;
+    FirebaseDatabase mFirebaseDatabase;
     ArrayList<Duyuru> duyurular;
     RecyclerAdapter recyclerAdapter;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,28 +46,7 @@ public class activity_ogretmen_duyuru_delete extends AppCompatActivity {
 
         getDataFromFirebase();
         setUpToolbar();
-
-        ItemTouchHelper helper = new ItemTouchHelper(new ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
-            @Override
-            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder viewHolder1) {
-                return false;
-            }
-
-            @Override
-            public void onSwiped(@NonNull RecyclerView.ViewHolder target, int i) {
-                Duyuru duyuru = new Duyuru();
-                DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
-                DatabaseReference duyuruRef = rootRef.child("Duyuru");
-                String pid = duyuru.getPid();
-                int position = target.getAdapterPosition();
-                duyuruRef.child(pid).removeValue();
-                duyurular.remove(position);
-                recyclerAdapter.notifyDataSetChanged();
-                recyclerAdapter.notifyItemRemoved(target.getAdapterPosition());
-                recyclerAdapter.notifyItemRangeChanged(target.getAdapterPosition(),duyurular.size());
-            }
-        });
-        helper.attachToRecyclerView(recyclerView);
+        
     }
 
     private void getDataFromFirebase() {
