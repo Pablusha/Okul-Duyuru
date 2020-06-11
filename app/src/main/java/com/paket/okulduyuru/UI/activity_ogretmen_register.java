@@ -167,4 +167,11 @@ public class activity_ogretmen_register extends AppCompatActivity {
     popUp.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
     popUp.show();
   }
+
+  @Override
+  public void onBackPressed() {
+    super.onBackPressed();
+    startActivity(new Intent(getApplicationContext(),activity_ogretmen_login.class));
+  }
+
 }

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 import android.widget.Toolbar;
@@ -49,7 +50,7 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
     duyuruRef.keepSynced(true);
     duyurular = new ArrayList<>();
 
-    getDataFromFirebase();
+    bolumKontrol();
 
     setUpToolbar();
 
@@ -85,20 +86,24 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
     }
 
     public void bolumKontrol() {
+        Duyuru duyuru = new Duyuru();
         DatabaseReference rootRef = FirebaseDatabase.getInstance().getReference();
         DatabaseReference ogrenciRef = rootRef.child("Ogrenci");
         DatabaseReference duyuruRef = rootRef.child("Duyuru");
         user = FirebaseAuth.getInstance().getCurrentUser();
         uid = user.getUid();
+        final String pid = duyuru.getPid();
 
         ValueEventListener eventListener = new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for (DataSnapshot ds: dataSnapshot.getChildren()) {
                     String bolum = dataSnapshot.child(uid).child("bolumler").getValue(String.class);
-                    String duyuruBolum = dataSnapshot.child("May 22, 202002:01:27 AM").child("bolum").getValue(String.class);
+                    String duyuruBolum = dataSnapshot.child(pid).child("bolum").getValue(String.class);
+                    if (bolum.equals(duyuruBolum)) {
+                        getDataFromFirebase();
+                    }
                     Toast.makeText(OgrenciDuyuruActivity.this,duyuruBolum + bolum,Toast.LENGTH_LONG).show();
-
                 }
 
             }
@@ -108,9 +113,8 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
 
             }
         };
-        duyuruRef.addValueEventListener(eventListener);
         ogrenciRef.addValueEventListener(eventListener);
-
+        duyuruRef.addValueEventListener(eventListener);
     }
 
     @Override
@@ -124,4 +128,9 @@ public class OgrenciDuyuruActivity extends AppCompatActivity {
         toolbar.setSubtitle("Bölüm Duyuruları");
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+    }
 }

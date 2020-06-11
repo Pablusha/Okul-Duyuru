@@ -105,6 +105,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="dialogSoru">Duyuruyu silmek istediğinizden emin misiniz?</string>
+    <string name="dialogEvet">EVET</string>
+    <string name="dialogHayir">HAYIR</string>
+    <string name="chatBirSeyYaz">Bir şeyler yazın</string>
 
 
 </resources>
