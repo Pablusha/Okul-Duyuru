@@ -45,4 +45,10 @@ public class activity_ogretmen_duyuru_yonetim extends AppCompatActivity {
         });
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),activity_ogretmen_home.class));
+    }
 }

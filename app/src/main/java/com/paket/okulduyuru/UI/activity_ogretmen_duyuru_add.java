@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -121,7 +122,7 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
+                        if (task.isSuccessful()) { Duyuru duyuru = new Duyuru();
                             Toast.makeText(activity_ogretmen_duyuru_add.this,"Duyuru yayınlama işlemi başarılı.",Toast.LENGTH_LONG).show();
                             startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
 
@@ -135,4 +136,9 @@ public class activity_ogretmen_duyuru_add extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(getApplicationContext(),activity_ogretmen_duyuru_yonetim.class));
+    }
 }

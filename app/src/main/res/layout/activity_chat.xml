@@ -49,7 +49,7 @@
             android:id="@+id/input_message"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Bir şeyler yazın"
+            android:hint="@string/chatBirSeyYaz"
             android:padding="15dp"
             android:maxLines="5"
             android:layout_toEndOf="@+id/send_files_btn"

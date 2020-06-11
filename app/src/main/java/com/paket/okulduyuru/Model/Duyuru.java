@@ -1,9 +1,13 @@
 package com.paket.okulduyuru.Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Duyuru {
 
     private String duyuruBaslik,duyuruContext,duyuruYazar,duyuruTime,duyuruDate,duyuruBolum;
     public static String pid;
+    public List<String> duyuruIds = new ArrayList<>();
 
     public String getDuyuruBolum() {
         return duyuruBolum;
